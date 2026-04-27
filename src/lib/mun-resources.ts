@@ -1,7 +1,6 @@
 export type FinderCategory =
   | "research"
   | "position-papers"
-  | "speech-drafts"
   | "resolutions"
   | "certificates";
 
@@ -27,27 +26,6 @@ export interface FinderResource {
 
 export const FINDER_RESOURCES: FinderResource[] = [
   {
-    id: "res-1",
-    category: "research",
-    label: "India — Water Security",
-    kind: "markdown",
-    url: "/mun/research/india-water-security.md",
-  },
-  {
-    id: "res-2",
-    category: "research",
-    label: "UNSC Reform Notes",
-    kind: "markdown",
-    url: "/mun/research/security-council-reform.md",
-  },
-  {
-    id: "plan-seamuns-site",
-    category: "research",
-    label: "seamuns.site — main website planning doc (Bangkok/Thailand MUN)",
-    kind: "pdf",
-    url: "/mun/planning-seamuns-site.pdf",
-  },
-  {
     id: "prep-cismun",
     category: "research",
     label: "CISMUN Prep document",
@@ -60,13 +38,6 @@ export const FINDER_RESOURCES: FinderResource[] = [
     label: "HEXAMUN '26 Prep document",
     kind: "pdf",
     url: "/mun/hexamun-26-prep.pdf",
-  },
-  {
-    id: "prep-template-shared",
-    category: "research",
-    label: "MUN Prep Template (for me + other delegates)",
-    kind: "pdf",
-    url: "/mun/mun-prep-template.pdf",
   },
   {
     id: "prep-mun07",
@@ -123,20 +94,6 @@ export const FINDER_RESOURCES: FinderResource[] = [
     label: "TSIMUN I Prep document",
     kind: "pdf",
     url: "/mun/tsimun-i-prep.pdf",
-  },
-  {
-    id: "pp-1",
-    category: "position-papers",
-    label: "GA4 — Quality Education",
-    kind: "markdown",
-    url: "/mun/position-papers/ga4-education.md",
-  },
-  {
-    id: "pp-2",
-    category: "position-papers",
-    label: "UNHCR — Protection",
-    kind: "markdown",
-    url: "/mun/position-papers/unhcr-refugees.md",
   },
   {
     id: "pp-afghanistan-who",
@@ -202,20 +159,6 @@ export const FINDER_RESOURCES: FinderResource[] = [
     url: "/mun/position-papers/ted-cruz-uscc-thaimun-xiii.pdf",
   },
   {
-    id: "sp-1",
-    category: "speech-drafts",
-    label: "Opening General Debate",
-    kind: "markdown",
-    url: "/mun/speech-drafts/opening-general-debate.md",
-  },
-  {
-    id: "sp-2",
-    category: "speech-drafts",
-    label: "Crisis Turn Lines",
-    kind: "markdown",
-    url: "/mun/speech-drafts/crisis-turn.md",
-  },
-  {
     id: "res-who-1-2",
     category: "resolutions",
     label: "WHO — Resolution 1.2 (draft)",
@@ -277,13 +220,6 @@ export const FINDER_RESOURCES: FinderResource[] = [
     label: "WHO — Resolution 1.2 (copy PDF)",
     kind: "pdf",
     url: "/mun/resolutions/who-resolution-1-2-alt.pdf",
-  },
-  {
-    id: "pdf-demo",
-    category: "position-papers",
-    label: "Sample PDF (research excerpt)",
-    kind: "pdf",
-    url: "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf",
   },
   {
     id: "cert-hexa-hm",
@@ -623,8 +559,6 @@ function categoryTitle(c: FinderCategory): string {
       return "Research Folders";
     case "position-papers":
       return "Position Papers";
-    case "speech-drafts":
-      return "Speech Drafts";
     case "certificates":
       return "Certificates & awards";
     case "resolutions":

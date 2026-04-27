@@ -136,15 +136,6 @@ export default function ResourcesPage() {
           </Link>{" "}
           and{" "}
           <Link
-            href="/mun/mun-prep-template.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-sky-300 hover:text-sky-200"
-          >
-            MUN Prep Template.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
             href="/mun/mun07-prep.pdf"
             target="_blank"
             rel="noopener noreferrer"

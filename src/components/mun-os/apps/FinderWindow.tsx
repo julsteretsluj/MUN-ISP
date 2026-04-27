@@ -3,7 +3,6 @@
 import {
   Award,
   ChevronRight,
-  FileStack,
   FileText,
   FolderSearch,
   ScrollText,
@@ -25,7 +24,6 @@ const CAT_META: Record<
 > = {
   research: { title: "Research Folders", icon: FolderSearch },
   "position-papers": { title: "Position Papers", icon: FileText },
-  "speech-drafts": { title: "Speech Drafts", icon: FileStack },
   resolutions: { title: "Resolutions", icon: ScrollText },
   certificates: { title: "Certificates", icon: Award },
 };
