@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Compass, Sparkles } from "lucide-react";
+import { ArrowRight, Compass } from "lucide-react";
 import { CertificateWall } from "@/components/site/CertificateWall";
 import { Callout, PageIntro, PullQuote, Section } from "@/components/site/Prose";
 
@@ -26,9 +26,9 @@ export default function HomePage() {
                 Start here
               </p>
               <p className="mt-1 max-w-xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.72)]">
-                New here? Follow this path once — then bookmark the pages you revisit
-                most. Each section builds on the last: story → thinking → evidence →
-                leadership → design → resources → reflection.
+                New here? Follow this 3-tab path: start with orientation on Home, then
+                move to Experience & understanding, and finish with Leadership / event
+                planning.
               </p>
             </div>
           </div>
@@ -36,13 +36,16 @@ export default function HomePage() {
         <ol className="mt-6 grid gap-3 sm:grid-cols-2">
           {[
             { n: 1, href: "/", label: "Home — orientation", here: true },
-            { n: 2, href: "/journey", label: "My MUN journey (compare)" },
-            { n: 3, href: "/thinking", label: "How I think like a delegate" },
-            { n: 4, href: "/best-work", label: "My best work (evidence)" },
-            { n: 5, href: "/leader", label: "From delegate → leader" },
-            { n: 6, href: "/conference-design", label: "Conference design" },
-            { n: 7, href: "/resources", label: "Resources for delegates" },
-            { n: 8, href: "/reflection", label: "Final reflection" },
+            {
+              n: 2,
+              href: "/experience-understanding",
+              label: "Experience & understanding",
+            },
+            {
+              n: 3,
+              href: "/leadership-event-planning",
+              label: "Leadership / event planning",
+            },
           ].map((step) => (
             <li key={step.href}>
               {step.here ? (
@@ -69,18 +72,18 @@ export default function HomePage() {
         </ol>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
-            href="/journey"
+            href="/experience-understanding"
             className="neu-chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-[rgba(232,236,244,0.9)]"
           >
-            Continue to My journey
+            Continue to Experience & understanding
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            href="/mun-os"
+            href="/resources"
             className="neu-accent-chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium"
           >
-            Open MUN-OS workspace
-            <Sparkles className="h-4 w-4" />
+            Open full document library
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

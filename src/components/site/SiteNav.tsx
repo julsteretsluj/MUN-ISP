@@ -37,10 +37,10 @@ export function SiteNav() {
 
         <div className="flex items-center gap-2">
           <Link
-            href="/mun-os"
+            href="/resources"
             className="neu-accent-chip hidden rounded-full px-3 py-2 text-[12px] font-medium transition hover:brightness-110 sm:inline-block"
           >
-            MUN-OS
+            Documents
           </Link>
           <button
             type="button"
@@ -68,11 +68,11 @@ export function SiteNav() {
               </Link>
             ))}
             <Link
-              href="/mun-os"
+              href="/resources"
               onClick={() => setOpen(false)}
               className="neu-accent-chip mt-2 rounded-xl px-3 py-2.5 text-center text-[14px] font-medium"
             >
-              Open MUN-OS experience
+              Open document library
             </Link>
           </div>
         </div>

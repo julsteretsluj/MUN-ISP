@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s · MUN Portfolio",
   },
   description:
-    "A delegate learning portfolio: journey, thinking, evidence, leadership, conference design, resources, and reflection — plus the MUN-OS interactive workspace.",
+    "A delegate learning portfolio with journey, thinking, evidence, leadership, conference design, resources, and reflection in one integrated site.",
 };
 
 export default function RootLayout({

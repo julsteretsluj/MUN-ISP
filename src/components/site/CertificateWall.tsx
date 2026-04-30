@@ -27,11 +27,7 @@ export function CertificateWall() {
           </h2>
           <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
             Ten official certificates from six conferences — participation and awards.
-            Open any tile to view the scan; full-screen previews also live in{" "}
-            <Link href="/mun-os" className="neu-link underline decoration-[var(--neu-accent)]/35">
-              MUN-OS Finder
-            </Link>
-            .
+            Open any tile to view the scan.
           </p>
         </div>
         <span className="text-[12px] font-medium tabular-nums text-[rgba(232,236,244,0.45)]">

@@ -73,14 +73,10 @@ export default function BestWorkPage() {
           papers and other awards live in the{" "}
           <Link href="/#certificates" className="neu-link font-medium">
             certificate gallery
-          </Link>{" "}
-          and in{" "}
-          <Link href="/mun-os" className="neu-link font-medium">
-            MUN-OS Finder → Certificates
           </Link>
-          . Full-text draft resolutions (PDF) are linked below and under{" "}
-          <Link href="/mun-os" className="neu-link font-medium">
-            Finder → Resolutions
+          . Full-text draft resolutions (PDF) are linked below and in the{" "}
+          <Link href="/resources" className="neu-link font-medium">
+            Resources page
           </Link>
           . <strong className="text-[rgba(232,236,244,0.88)]">WHO · Afghanistan</strong>,{" "}
           <strong className="text-[rgba(232,236,244,0.88)]">INTERPOL · France (MUN107 IV)</strong>,{" "}
@@ -93,9 +89,9 @@ export default function BestWorkPage() {
           , <strong className="text-[rgba(232,236,244,0.88)]">WHO · Belgium</strong>,{" "}
           <strong className="text-[rgba(232,236,244,0.88)]">UNODC · Nicaragua</strong>, and{" "}
           <strong className="text-[rgba(232,236,244,0.88)]">USCC · Ted Cruz (THAIMUN XIII)</strong>{" "}
-          position papers (PDF) are filed under{" "}
-          <Link href="/mun-os" className="neu-link font-medium">
-            Finder → Position Papers
+          position papers (PDF) are listed in{" "}
+          <Link href="/resources" className="neu-link font-medium">
+            Resources
           </Link>
           .
         </p>
@@ -110,8 +106,7 @@ export default function BestWorkPage() {
         <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
           Nine committee resolutions as merged or co-sponsored drafts (WHO 1.2 draft and
           copy, CISMUN 1.1, UNOOSA, CSTD, ECOSOC, GA Bloc C, INTERPOL, UNODC). Open
-          in-browser or preview inside{" "}
-          <span className="text-[rgba(232,236,244,0.78)]">MUN-OS Quick Look</span>.
+          directly in-browser.
         </p>
         <ul className="grid gap-4 md:grid-cols-3">
           {resolutions.map((r) => (
@@ -133,10 +128,10 @@ export default function BestWorkPage() {
                     Open PDF
                   </Link>
                   <Link
-                    href="/mun-os"
+                    href="/resources"
                     className="neu-accent-chip rounded-xl px-3 py-2 text-[13px] font-medium"
                   >
-                    MUN-OS Finder
+                    All files
                   </Link>
                 </div>
               </div>
@@ -222,10 +217,10 @@ export default function BestWorkPage() {
                 Attach your PDF / link in your final version
               </span>
               <Link
-                href="/mun-os"
+                href="/resources"
                 className="neu-accent-chip rounded-xl px-3 py-2 text-[12px] font-medium"
               >
-                Organize files in MUN-OS Finder
+                Open full file library
               </Link>
             </div>
           </article>

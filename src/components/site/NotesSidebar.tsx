@@ -55,10 +55,10 @@ export function NotesSidebar() {
           Certificates wall
         </Link>
         <Link
-          href="/mun-os"
+          href="/resources"
           className="neu-accent-chip block rounded-xl px-2.5 py-2 text-center text-[12px] font-medium"
         >
-          Open MUN-OS
+          Open all files
         </Link>
       </div>
     </aside>

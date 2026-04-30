@@ -7,6 +7,7 @@ import {
   PinnedMeta,
   Section,
 } from "@/components/site/Prose";
+import { FINDER_RESOURCES } from "@/lib/mun-resources";
 
 export const metadata = {
   title: "Resources for delegates",
@@ -18,11 +19,9 @@ export default function ResourcesPage() {
       <PageIntro eyebrow="Page 7 · Help others succeed" title="Resources for delegates">
         <p>
           These guides are written from practice — mistakes included — so they’re meant
-          to be reused. Pair them with the interactive{" "}
-          <Link href="/mun-os" className="neu-link font-medium underline decoration-[var(--neu-accent)]/40">
-            MUN-OS
-          </Link>{" "}
-          workspace for files, planning matrices, and community-style tiles.
+          to be reused. All portfolio files are now integrated directly into this site,
+          so you can open prep documents, position papers, resolutions, and certificates
+          from one place.
         </p>
       </PageIntro>
       <PinnedMeta>Pinned note · Reusable prep systems for newer delegates</PinnedMeta>
@@ -105,14 +104,9 @@ export default function ResourcesPage() {
       <Section title="Digital toolkit">
         <LastEditedRow>Apr 2026 · prep PDFs consolidated</LastEditedRow>
         <p>
-          Use{" "}
-          <Link href="/mun-os" className="neu-link font-medium">
-            MUN-OS
-          </Link>{" "}
-          for a Finder-style prep catalog (including{" "}
+          This site includes a full prep catalog (including{" "}
           <strong className="text-[rgba(232,236,244,0.85)]">Certificates</strong> and{" "}
-          <strong className="text-[rgba(232,236,244,0.85)]">Resolutions</strong> PDFs), logistics views,
-          packet simulations, and community tiles — it
+          <strong className="text-[rgba(232,236,244,0.85)]">Resolutions</strong> PDFs) and it
           keeps evidence organised when nerves spike before session.
         </p>
         <p>
@@ -206,9 +200,45 @@ export default function ResourcesPage() {
           >
             TSIMUN I Prep.pdf
           </Link>{" "}
-          (your reusable delegate template, indexed in Finder and Spotlight under
-          Research).
+          .
         </p>
+      </Section>
+
+      <Section title="All portfolio files">
+        <LastEditedRow>Apr 2026 · unified file index</LastEditedRow>
+        {(["research", "position-papers", "resolutions", "certificates"] as const).map(
+          (category) => {
+            const items = FINDER_RESOURCES.filter((r) => r.category === category);
+            if (!items.length) return null;
+            const label =
+              category === "research"
+                ? "Prep documents"
+                : category === "position-papers"
+                  ? "Position papers"
+                  : category === "resolutions"
+                    ? "Draft resolutions"
+                    : "Certificates";
+            return (
+              <div key={category} className="mb-7">
+                <h3 className="mb-2 text-base font-semibold text-[var(--foreground)]">{label}</h3>
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {items.map((item) => (
+                    <li key={item.id}>
+                      <Link
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="neu-chip block rounded-xl px-3 py-2 text-[13px] text-[rgba(232,236,244,0.85)]"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          }
+        )}
       </Section>
     </>
   );

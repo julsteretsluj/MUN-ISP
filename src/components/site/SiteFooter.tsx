@@ -26,10 +26,10 @@ export function SiteFooter() {
               Certificates
             </Link>
             <Link
-              href="/mun-os"
+              href="/resources"
               className="neu-accent-chip rounded-xl px-3 py-2 font-medium"
             >
-              MUN-OS tools
+              All files
             </Link>
           </div>
         </div>
