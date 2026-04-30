@@ -3,6 +3,7 @@ import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, Star } from "lucide-rea
 type AwardCode = "BD" | "BPP" | "VC" | "HM";
 
 type TimelineItem = {
+  order: number;
   conference: string;
   committee: string;
   allocation: string;
@@ -12,26 +13,36 @@ type TimelineItem = {
 
 const TIMELINE: TimelineItem[] = [
   {
+    order: 1,
     conference: "THAIMUN XII",
     committee: "UNODC",
     allocation: "Nicaragua",
     date: "22-24 March 2025",
   },
-  { conference: "NISMUN III", committee: "ECOSOC", allocation: "USA", date: "7 June 2025" },
   {
-    conference: "Regent's MUN I",
+    order: 2,
+    conference: "NISMUN III",
+    committee: "ECOSOC",
+    allocation: "USA",
+    date: "7 June 2025",
+  },
+  {
+    order: 3,
+    conference: "Regents MUN I",
     committee: "USCC",
     allocation: "Senator Elizabeth Warren",
     date: "20 September 2025",
     awards: ["BD"],
   },
   {
+    order: 4,
     conference: "CISMUN IV",
     committee: "WHO",
     allocation: "Belgium",
     date: "25-26 October 2025",
   },
   {
+    order: 5,
     conference: "STAMUN XI",
     committee: "WHO",
     allocation: "New Zealand",
@@ -39,12 +50,14 @@ const TIMELINE: TimelineItem[] = [
     awards: ["BPP"],
   },
   {
+    order: 6,
     conference: "SISBMUN III",
     committee: "UNOOSA",
     allocation: "Israel",
     date: "9-11 January 2026",
   },
   {
+    order: 7,
     conference: "TSIMUN I",
     committee: "CSTD",
     allocation: "Germany",
@@ -52,12 +65,14 @@ const TIMELINE: TimelineItem[] = [
     awards: ["BPP"],
   },
   {
+    order: 8,
     conference: "NewtonMUN I",
     committee: "WHO",
     allocation: "Afghanistan",
     date: "14-15 February 2026",
   },
   {
+    order: 9,
     conference: "MUN07 IV",
     committee: "INTERPOL",
     allocation: "France",
@@ -65,12 +80,14 @@ const TIMELINE: TimelineItem[] = [
     awards: ["BD", "BPP"],
   },
   {
+    order: 10,
     conference: "THAIMUN XIII",
     committee: "USCC",
     allocation: "Ted Cruz (TX, Republican)",
     date: "20-22 March 2026",
   },
   {
+    order: 11,
     conference: "HEXAMUN '26",
     committee: "HCC",
     allocation: "Pierre Mendes France",
@@ -104,6 +121,14 @@ export function ConferenceTimeline() {
         A visual path of all conferences attended, inspired by your hand-drawn flow, now
         populated with your timeline dates.
       </p>
+      <div className="mb-2 flex items-center justify-between">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(71,85,105,0.72)]">
+          Start: March 2025
+        </p>
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(71,85,105,0.72)]">
+          End: April 2026
+        </p>
+      </div>
       <div className="mb-4 flex flex-wrap gap-2">
         {(Object.keys(AWARD_LABELS) as AwardCode[]).map((code) => (
           <span
@@ -128,10 +153,15 @@ export function ConferenceTimeline() {
                     key={`${item.conference}-${item.committee}`}
                     className={itemIndex === 0 ? "md:col-start-1" : itemIndex === 1 ? "md:col-start-3" : "md:col-start-5"}
                   >
-                    <article className="neu-inset rounded-2xl p-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
-                        {item.conference}
-                      </p>
+                    <article className="neu-inset h-full rounded-2xl p-4">
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                          {item.conference}
+                        </p>
+                        <span className="rounded-full bg-[rgba(59,130,246,0.14)] px-2 py-0.5 text-[10px] font-semibold text-[rgb(29,78,216)]">
+                          #{String(item.order).padStart(2, "0")}
+                        </span>
+                      </div>
                       <p className="mt-1 text-[14px] font-medium text-[var(--foreground)]">
                         {item.committee} · {item.allocation}
                       </p>

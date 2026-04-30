@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { PageIntro } from "@/components/site/Prose";
 
 export const metadata = {
@@ -319,24 +318,10 @@ export default function ConferenceDesignPage() {
 
               <section>
                 <h3 className="text-lg font-semibold text-black/85">Planning documents</h3>
-                <p className="mt-2 text-[14px]">
-                  <Link
-                    href="/mun/planning-seamuns-site.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline decoration-blue-300 hover:text-blue-700"
-                  >
-                    bangkok_thailand mun website.pdf
-                  </Link>{" "}
-                  and{" "}
-                  <Link
-                    href="/mun/seamun-the-conference.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline decoration-blue-300 hover:text-blue-700"
-                  >
-                    SEAMUN _ The Conference.pdf
-                  </Link>
+                <p className="mt-2 text-[14px] text-black/75">
+                  Planning files are intentionally not linked publicly because they include
+                  sensitive details (including contact information). A redacted version can
+                  be shared on request.
                 </p>
               </section>
             </div>
