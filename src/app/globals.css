@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* Duolingo-inspired light + playful soft UI */
+/* Modern light UI — white base with diverse accent colors */
 :root {
-  --background: #f5ffe8;
-  --foreground: #1f2c1b;
-  --neu-canvas: #efffd8;
-  --neu-surface: #3e6f38;
-  --neu-elevated: #4f8548;
-  --neu-shadow-dark: rgba(34, 70, 31, 0.3);
-  --neu-shadow-light: rgba(255, 255, 255, 0.7);
-  --neu-inset-dark: rgba(30, 68, 28, 0.24);
-  --neu-accent: #1cb0f6;
-  --neu-accent-dim: rgba(28, 176, 246, 0.22);
-  --neu-warm: rgba(255, 200, 70, 0.28);
-  --neu-warm-border: rgba(255, 168, 0, 0.42);
+  --background: #f8fafc;
+  --foreground: #1f2937;
+  --neu-canvas: #f7f9fc;
+  --neu-surface: #ffffff;
+  --neu-elevated: #f2f5fb;
+  --neu-shadow-dark: rgba(15, 23, 42, 0.12);
+  --neu-shadow-light: rgba(255, 255, 255, 0.96);
+  --neu-inset-dark: rgba(148, 163, 184, 0.2);
+  --neu-accent: #2563eb;
+  --neu-accent-dim: rgba(37, 99, 235, 0.16);
+  --neu-warm: rgba(255, 183, 77, 0.2);
+  --neu-warm-border: rgba(255, 167, 38, 0.38);
 }
 
 @theme inline {
@@ -31,9 +31,10 @@ body {
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 800px at 12% 8%, rgba(88, 204, 2, 0.18), transparent 55%),
-    radial-gradient(900px 700px at 86% 20%, rgba(28, 176, 246, 0.14), transparent 50%),
-    radial-gradient(900px 700px at 70% 88%, rgba(255, 180, 0, 0.14), transparent 55%),
+    radial-gradient(1200px 800px at 10% 6%, rgba(37, 99, 235, 0.12), transparent 55%),
+    radial-gradient(900px 700px at 88% 18%, rgba(139, 92, 246, 0.12), transparent 50%),
+    radial-gradient(900px 700px at 70% 88%, rgba(251, 113, 133, 0.1), transparent 55%),
+    radial-gradient(760px 620px at 28% 78%, rgba(245, 158, 11, 0.1), transparent 50%),
     var(--neu-canvas);
   color: var(--foreground);
   font-family:
@@ -54,8 +55,8 @@ body {
   background: var(--neu-surface);
   border-radius: 1.25rem;
   box-shadow:
-    8px 8px 20px var(--neu-shadow-dark),
-    -7px -7px 16px var(--neu-shadow-light);
+    8px 10px 24px var(--neu-shadow-dark),
+    -6px -6px 16px var(--neu-shadow-light);
 }
 
 /* Concave / pressed well */
@@ -98,11 +99,11 @@ body {
   box-shadow:
     4px 4px 10px rgba(0, 0, 0, 0.35),
     -2px -2px 8px rgba(138, 180, 255, 0.08);
-  color: #0c5073;
+  color: #174ea6;
 }
 
 .neu-text-muted {
-  color: rgba(34, 52, 28, 0.68);
+  color: rgba(51, 65, 85, 0.68);
 }
 
 .neu-link {
@@ -111,5 +112,5 @@ body {
 }
 
 .neu-link:hover {
-  color: #0e7cb0;
+  color: #1d4ed8;
 }

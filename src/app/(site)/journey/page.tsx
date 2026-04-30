@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CountriesMap } from "@/components/site/CountriesMap";
 import {
   Callout,
   LastEditedRow,
@@ -171,6 +172,8 @@ export default function JourneyPage() {
           </strong>
         </p>
       </Section>
+
+      <CountriesMap />
 
       <div className="space-y-14">
         {THEMES.map((theme) => (
