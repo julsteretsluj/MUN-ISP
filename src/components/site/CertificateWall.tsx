@@ -22,19 +22,19 @@ export function CertificateWall() {
     <div id="certificates" className="scroll-mt-28 mt-12">
       <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-xl font-semibold tracking-tight text-white">
+          <h2 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
             Certificates & evidence
           </h2>
-          <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-white/55">
+          <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
             Ten official certificates from six conferences — participation and awards.
             Open any tile to view the scan; full-screen previews also live in{" "}
-            <Link href="/mun-os" className="text-sky-300 underline decoration-sky-500/35">
+            <Link href="/mun-os" className="neu-link underline decoration-[var(--neu-accent)]/35">
               MUN-OS Finder
             </Link>
             .
           </p>
         </div>
-        <span className="text-[12px] font-medium tabular-nums text-white/45">
+        <span className="text-[12px] font-medium tabular-nums text-[rgba(232,236,244,0.45)]">
           {items.length} files
         </span>
       </div>
@@ -43,7 +43,7 @@ export function CertificateWall() {
           <button
             type="button"
             onClick={() => scrollByCards("left")}
-            className="pointer-events-auto inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/45 text-white/80 transition hover:bg-black/65"
+            className="neu-chip pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full text-[rgba(232,236,244,0.85)]"
             aria-label="Scroll certificates left"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -51,7 +51,7 @@ export function CertificateWall() {
           <button
             type="button"
             onClick={() => scrollByCards("right")}
-            className="pointer-events-auto inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-black/45 text-white/80 transition hover:bg-black/65"
+            className="neu-chip pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full text-[rgba(232,236,244,0.85)]"
             aria-label="Scroll certificates right"
           >
             <ChevronRight className="h-4 w-4" />
@@ -59,11 +59,11 @@ export function CertificateWall() {
         </div>
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-[#131519] to-transparent"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[var(--neu-surface)] to-transparent"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-[#131519] to-transparent"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[var(--neu-surface)] to-transparent"
         />
         <ul
           ref={listRef}
@@ -75,9 +75,9 @@ export function CertificateWall() {
                 href={c.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] ring-1 ring-black/30 transition hover:border-sky-400/25 hover:bg-white/[0.05]"
+                className="neu-raised group block overflow-hidden rounded-2xl transition hover:brightness-[1.03]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-black/40">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[var(--neu-canvas)]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={c.url}
@@ -85,7 +85,7 @@ export function CertificateWall() {
                     className="h-full w-full object-contain opacity-95 transition duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
                   />
                 </div>
-                <p className="border-t border-white/[0.06] px-3 py-3 text-[12px] leading-snug text-white/75 transition group-hover:text-white/90">
+                <p className="border-t border-[rgba(255,255,255,0.06)] px-3 py-3 text-[12px] leading-snug text-[rgba(232,236,244,0.75)] transition group-hover:text-[rgba(232,236,244,0.92)]">
                   {c.label}
                 </p>
               </Link>

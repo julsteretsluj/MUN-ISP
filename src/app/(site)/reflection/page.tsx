@@ -62,27 +62,27 @@ export default function ReflectionPage() {
 
       <Callout title="Level 6 · Connect the whole project">
         <p className="mb-3">
-          <Link href="/journey" className="text-sky-300 hover:text-sky-200">
+          <Link href="/journey" className="neu-link font-medium">
             Journey
           </Link>{" "}
           taught me comparison;{" "}
-          <Link href="/thinking" className="text-sky-300 hover:text-sky-200">
+          <Link href="/thinking" className="neu-link font-medium">
             Thinking
           </Link>{" "}
           turned habits explicit;{" "}
-          <Link href="/best-work" className="text-sky-300 hover:text-sky-200">
+          <Link href="/best-work" className="neu-link font-medium">
             Best work
           </Link>{" "}
           proved growth with evidence;{" "}
-          <Link href="/leader" className="text-sky-300 hover:text-sky-200">
+          <Link href="/leader" className="neu-link font-medium">
             Leader
           </Link>{" "}
           named systemic gaps;{" "}
-          <Link href="/conference-design" className="text-sky-300 hover:text-sky-200">
+          <Link href="/conference-design" className="neu-link font-medium">
             Conference design
           </Link>{" "}
           proposed a practical response;{" "}
-          <Link href="/resources" className="text-sky-300 hover:text-sky-200">
+          <Link href="/resources" className="neu-link font-medium">
             Resources
           </Link>{" "}
           tries to pay the learning forward.

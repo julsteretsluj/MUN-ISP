@@ -17,20 +17,20 @@ export function SiteNav() {
     ) ?? SITE_LINKS[0];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/[0.08] bg-[rgba(24,26,31,0.9)] backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-[rgba(255,255,255,0.05)] bg-[var(--neu-surface)]/92 backdrop-blur-md">
       <div className="flex items-center justify-between gap-4 px-4 py-3">
         <Link
           href="/"
-          className="group flex shrink-0 items-center gap-2 font-semibold tracking-tight text-white"
+          className="group flex shrink-0 items-center gap-2 font-semibold tracking-tight text-[var(--foreground)]"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-white/[0.08] ring-1 ring-white/10 transition group-hover:bg-white/[0.12]">
-            <span className="text-[13px] text-sky-300">MUN</span>
+          <span className="neu-inset grid h-9 w-9 place-items-center rounded-xl transition">
+            <span className="text-[13px] text-[var(--neu-accent)]">MUN</span>
           </span>
-          <span className="hidden text-[15px] sm:inline">Notes</span>
+          <span className="hidden text-[15px] sm:inline">Portfolio</span>
         </Link>
 
         <div className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
-          <p className="truncate rounded-lg bg-white/[0.06] px-3 py-1.5 text-[13px] text-white/75 ring-1 ring-white/10">
+          <p className="neu-inset truncate px-3 py-2 text-[13px] text-[rgba(232,236,244,0.75)]">
             {current.label}
           </p>
         </div>
@@ -38,13 +38,13 @@ export function SiteNav() {
         <div className="flex items-center gap-2">
           <Link
             href="/mun-os"
-            className="hidden rounded-full bg-[#007AFF]/25 px-3 py-1.5 text-[12px] font-medium text-sky-200 ring-1 ring-[#007AFF]/35 transition hover:bg-[#007AFF]/35 sm:inline-block"
+            className="neu-accent-chip hidden rounded-full px-3 py-2 text-[12px] font-medium transition hover:brightness-110 sm:inline-block"
           >
             MUN-OS
           </Link>
           <button
             type="button"
-            className="rounded-lg p-2 text-white/80 ring-1 ring-white/10 lg:hidden"
+            className="neu-chip rounded-xl p-2 text-[rgba(232,236,244,0.85)] lg:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
@@ -55,14 +55,14 @@ export function SiteNav() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/[0.06] bg-[rgba(24,26,31,0.95)] px-4 py-3 lg:hidden">
+        <div className="neu-inset mx-3 mb-3 border-0 px-4 py-3 lg:hidden">
           <div className="flex flex-col gap-1">
             {SITE_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-[14px] text-white/85 hover:bg-white/[0.06]"
+                className="rounded-xl px-3 py-2.5 text-[14px] text-[rgba(232,236,244,0.88)] transition hover:bg-[var(--neu-elevated)]"
               >
                 {label}
               </Link>
@@ -70,7 +70,7 @@ export function SiteNav() {
             <Link
               href="/mun-os"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg bg-[#007AFF]/20 px-3 py-2.5 text-[14px] font-medium text-sky-200"
+              className="neu-accent-chip mt-2 rounded-xl px-3 py-2.5 text-center text-[14px] font-medium"
             >
               Open MUN-OS experience
             </Link>

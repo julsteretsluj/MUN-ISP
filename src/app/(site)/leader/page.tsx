@@ -57,10 +57,10 @@ export default function LeaderPage() {
 
       <Section title="What didn’t work">
         <ul className="space-y-3">
-          <li className="rounded-xl border border-white/[0.06] bg-black/25 px-4 py-3">
+          <li className="neu-inset rounded-xl px-4 py-3">
             Generic “research tips” without exemplars — too abstract for tired brains.
           </li>
-          <li className="rounded-xl border border-white/[0.06] bg-black/25 px-4 py-3">
+          <li className="neu-inset rounded-xl px-4 py-3">
             Giant binder packs with no prioritization — overwhelmed newer delegates.
           </li>
         </ul>

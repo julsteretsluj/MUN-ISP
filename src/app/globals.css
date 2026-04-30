@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+/* Dark soft UI / neumorphism — single base tone, depth from light + dark shadows */
 :root {
-  --background: #05070d;
-  --foreground: #f4f6fb;
+  --background: #1e222a;
+  --foreground: #e8ecf4;
+  --neu-canvas: #1a1e26;
+  --neu-surface: #262b34;
+  --neu-elevated: #2c323d;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.48);
+  --neu-shadow-light: rgba(255, 255, 255, 0.06);
+  --neu-inset-dark: rgba(0, 0, 0, 0.42);
+  --neu-accent: #8ab4ff;
+  --neu-accent-dim: rgba(138, 180, 255, 0.18);
+  --neu-warm: rgba(255, 214, 140, 0.14);
+  --neu-warm-border: rgba(255, 206, 120, 0.22);
 }
 
 @theme inline {
@@ -19,7 +30,7 @@ body {
 
 body {
   margin: 0;
-  background: var(--background);
+  background: var(--neu-canvas);
   color: var(--foreground);
   font-family:
     ui-sans-serif,
@@ -32,4 +43,69 @@ body {
     Helvetica,
     Arial,
     sans-serif;
+}
+
+/* Raised “pillowed” surface — appears to push out from the canvas */
+.neu-raised {
+  background: var(--neu-surface);
+  border-radius: 1.25rem;
+  box-shadow:
+    10px 10px 22px var(--neu-shadow-dark),
+    -8px -8px 18px var(--neu-shadow-light);
+}
+
+/* Concave / pressed well */
+.neu-inset {
+  background: var(--neu-surface);
+  border-radius: 1rem;
+  box-shadow:
+    inset 6px 6px 14px var(--neu-inset-dark),
+    inset -4px -4px 12px var(--neu-shadow-light);
+}
+
+/* Subtle raised chip / button */
+.neu-chip {
+  background: var(--neu-elevated);
+  border-radius: 0.75rem;
+  box-shadow:
+    4px 4px 10px var(--neu-shadow-dark),
+    -3px -3px 8px var(--neu-shadow-light);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.neu-chip:hover {
+  box-shadow:
+    5px 5px 12px var(--neu-shadow-dark),
+    -4px -4px 10px var(--neu-shadow-light);
+}
+
+.neu-chip:active {
+  box-shadow:
+    inset 3px 3px 8px var(--neu-inset-dark),
+    inset -2px -2px 6px var(--neu-shadow-light);
+}
+
+/* Accent pill (soft UI primary) */
+.neu-accent-chip {
+  background: var(--neu-accent-dim);
+  border-radius: 9999px;
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.35),
+    -2px -2px 8px rgba(138, 180, 255, 0.08);
+  color: var(--neu-accent);
+}
+
+.neu-text-muted {
+  color: rgba(232, 236, 244, 0.58);
+}
+
+.neu-link {
+  color: var(--neu-accent);
+  text-underline-offset: 3px;
+}
+
+.neu-link:hover {
+  color: #b8d4ff;
 }

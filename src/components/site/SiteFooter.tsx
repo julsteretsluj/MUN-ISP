@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-white/[0.08] bg-[rgba(16,18,22,0.6)]">
+    <footer className="mt-16 border-t border-[rgba(255,255,255,0.05)] bg-[var(--neu-surface)]">
       <div className="px-4 py-8 sm:px-6">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-[14px] font-semibold text-white">MUN Portfolio</p>
-            <p className="mt-2 max-w-md text-[13px] leading-relaxed text-white/50">
+            <p className="text-[14px] font-semibold text-[var(--foreground)]">MUN Portfolio</p>
+            <p className="mt-2 max-w-md text-[13px] leading-relaxed text-[rgba(232,236,244,0.5)]">
               Built as a learning resource: navigate in order or jump to what you
               need. Replace sample details with your own evidence.
             </p>
@@ -15,25 +15,25 @@ export function SiteFooter() {
           <div className="flex flex-wrap gap-3 text-[13px]">
             <Link
               href="/#start-here"
-              className="rounded-lg bg-white/[0.06] px-3 py-2 text-white/80 ring-1 ring-white/10 hover:bg-white/[0.09]"
+              className="neu-chip rounded-xl px-3 py-2 text-[rgba(232,236,244,0.85)]"
             >
               Start here
             </Link>
             <Link
               href="/#certificates"
-              className="rounded-lg bg-white/[0.06] px-3 py-2 text-white/80 ring-1 ring-white/10 hover:bg-white/[0.09]"
+              className="neu-chip rounded-xl px-3 py-2 text-[rgba(232,236,244,0.85)]"
             >
               Certificates
             </Link>
             <Link
               href="/mun-os"
-              className="rounded-lg bg-[#007AFF]/20 px-3 py-2 text-sky-200 ring-1 ring-[#007AFF]/30 hover:bg-[#007AFF]/30"
+              className="neu-accent-chip rounded-xl px-3 py-2 font-medium"
             >
               MUN-OS tools
             </Link>
           </div>
         </div>
-        <p className="mt-8 text-[12px] text-white/35">
+        <p className="mt-8 text-[12px] text-[rgba(232,236,244,0.38)]">
           © {new Date().getFullYear()} · Portfolio for learning · Not affiliated
           with any single conference secretariat.
         </p>

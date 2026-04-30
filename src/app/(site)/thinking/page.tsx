@@ -20,7 +20,7 @@ export default function ThinkingPage() {
       </PageIntro>
 
       <Section title="How I research a country">
-        <ol className="list-decimal space-y-4 pl-5 marker:text-sky-400/90">
+        <ol className="list-decimal space-y-4 pl-5 marker:text-[var(--neu-accent)]">
           <li>
             <strong className="text-white/88">Start with constraints, not adjectives.</strong>{" "}
             I read budget lines, trade dependence, recent treaty positions, and domestic

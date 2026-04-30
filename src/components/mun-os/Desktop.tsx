@@ -14,7 +14,7 @@ export function Desktop() {
   const windows = useDesktopStore((s) => s.windows);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black font-sans text-white selection:bg-sky-500/35">
+    <div className="relative min-h-screen overflow-hidden bg-[var(--neu-canvas)] font-sans text-[var(--foreground)] selection:bg-[var(--neu-accent-dim)]">
       <Wallpaper />
       <MenuBar />
       <Dock />

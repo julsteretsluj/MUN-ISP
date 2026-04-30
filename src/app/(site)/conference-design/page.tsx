@@ -11,7 +11,7 @@ export default function ConferenceDesignPage() {
       <PageIntro eyebrow="Page 6 · Apply learning" title="My conference design">
         <p>
           This page is formatted like an Apple Notes workspace and uses my actual planning brief for{" "}
-          <strong className="text-white/90">SEAMUN I</strong>, including strategy,
+          <strong className="text-[rgba(232,236,244,0.92)]">SEAMUN I</strong>, including strategy,
           operations, academic structure, and delegate systems. The conference model is
           built as a non-profit, tech-forward format designed for accessibility and
           academic rigor.
@@ -19,8 +19,8 @@ export default function ConferenceDesignPage() {
       </PageIntro>
 
       <div className="grid gap-5 lg:grid-cols-[280px_1fr]">
-        <aside className="rounded-2xl border border-white/[0.08] bg-[rgba(30,32,36,0.88)] p-3 backdrop-blur-md">
-          <p className="px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-white/45">
+        <aside className="neu-inset p-3">
+          <p className="px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-[rgba(232,236,244,0.45)]">
             Folders
           </p>
           <div className="space-y-1">
@@ -37,10 +37,10 @@ export default function ConferenceDesignPage() {
               <button
                 key={item}
                 type="button"
-                className={`flex w-full items-center rounded-lg px-3 py-2 text-left text-[13px] transition ${
+                className={`flex w-full items-center rounded-xl px-3 py-2 text-left text-[13px] transition ${
                   i === 0
-                    ? "bg-white/[0.10] text-white ring-1 ring-white/10"
-                    : "text-white/65 hover:bg-white/[0.06] hover:text-white/90"
+                    ? "neu-inset text-[var(--foreground)]"
+                    : "text-[rgba(232,236,244,0.65)] hover:bg-[var(--neu-elevated)] hover:text-[var(--foreground)] hover:shadow-[4px_4px_10px_rgba(0,0,0,0.35)]"
                 }`}
               >
                 {item}
@@ -49,8 +49,15 @@ export default function ConferenceDesignPage() {
           </div>
         </aside>
 
-        <div className="rounded-2xl border border-white/[0.08] bg-[#1e1f22]/95 p-1 backdrop-blur-md">
-          <article className="rounded-xl border border-white/[0.06] bg-[#f8f5ef] text-[#1f1f22] shadow-inner">
+        <div className="neu-inset p-1">
+          <article
+            className="rounded-[0.875rem] text-[#1f1f22]"
+            style={{
+              background: "#ebe4d8",
+              boxShadow:
+                "inset 4px 4px 10px rgba(0,0,0,0.08), inset -3px -3px 8px rgba(255,255,255,0.6)",
+            }}
+          >
             <header className="border-b border-black/10 px-6 py-4">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-black/45">
                 Note · Conference Planning

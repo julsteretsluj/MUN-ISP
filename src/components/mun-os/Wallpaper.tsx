@@ -7,11 +7,9 @@ export function Wallpaper() {
         className="absolute inset-0 scale-110"
         style={{
           background: `
-            radial-gradient(1200px 800px at 15% 20%, rgba(88, 142, 255, 0.55), transparent 55%),
-            radial-gradient(900px 700px at 85% 25%, rgba(175, 82, 222, 0.45), transparent 50%),
-            radial-gradient(800px 600px at 40% 90%, rgba(52, 199, 89, 0.35), transparent 50%),
-            radial-gradient(700px 500px at 75% 75%, rgba(255, 149, 0, 0.35), transparent 55%),
-            linear-gradient(165deg, #0c1220 0%, #141e33 38%, #1a1430 72%, #0f172a 100%)
+            radial-gradient(1000px 700px at 20% 15%, rgba(138, 180, 255, 0.12), transparent 55%),
+            radial-gradient(900px 600px at 85% 30%, rgba(138, 180, 255, 0.06), transparent 50%),
+            linear-gradient(165deg, #1a1e26 0%, #222831 45%, #1e222a 100%)
           `,
         }}
       />

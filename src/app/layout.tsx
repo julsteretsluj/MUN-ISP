@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full overflow-x-hidden overflow-y-auto bg-[#05070d] text-white antialiased">
+      <body className="min-h-full overflow-x-hidden overflow-y-auto bg-[var(--neu-canvas)] text-[var(--foreground)] antialiased selection:bg-[var(--neu-accent-dim)] selection:text-[var(--foreground)]">
         {children}
       </body>
     </html>

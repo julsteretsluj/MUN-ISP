@@ -139,7 +139,7 @@ export default function JourneyPage() {
       <PageIntro eyebrow="Page 2 · Compare & analyse" title="My MUN journey">
         <p>
           Across several conferences, the same skill showed up again and again:{" "}
-          <strong className="text-white/90">
+          <strong className="text-[rgba(232,236,244,0.9)]">
             translating national interests into negotiable text
           </strong>
           . Below I group conferences by <em>theme</em> — crisis/security, health/science,
@@ -156,7 +156,7 @@ export default function JourneyPage() {
           The shift wasn’t abandoning values — it was learning to embed them in clauses
           that could survive cross-examination in unmoderated caucus. Evidence files for
           each event are collected on the{" "}
-          <Link href="/#certificates" className="text-sky-300 underline decoration-sky-500/40">
+          <Link href="/#certificates" className="neu-link underline decoration-[var(--neu-accent)]/40">
             Home page certificate gallery
           </Link>
           .
@@ -166,7 +166,7 @@ export default function JourneyPage() {
       <Section title="Themes (not just a timeline)">
         <p>
           Grouping by theme answers:{" "}
-          <strong className="text-white/88">
+          <strong className="text-[rgba(232,236,244,0.88)]">
             what transfers across committees — and what doesn’t?
           </strong>
         </p>
@@ -175,11 +175,11 @@ export default function JourneyPage() {
       <div className="space-y-14">
         {THEMES.map((theme) => (
           <section key={theme.name}>
-            <div className="mb-6 flex flex-col gap-2 border-b border-white/[0.08] pb-4 sm:flex-row sm:items-end sm:justify-between">
-              <h2 className="text-2xl font-semibold tracking-tight text-white">
+            <div className="mb-6 flex flex-col gap-2 pb-4 sm:flex-row sm:items-end sm:justify-between">
+              <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
                 {theme.name}
               </h2>
-              <p className="max-w-xl text-[14px] leading-relaxed text-white/55">
+              <p className="max-w-xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
                 {theme.blurb}
               </p>
             </div>
@@ -187,18 +187,18 @@ export default function JourneyPage() {
             <div className="grid gap-6 lg:grid-cols-2">
               {theme.items.map((c) => (
                 <NoteCard key={`${c.conference}-${c.committee}`}>
-                  <p className="text-[12px] font-semibold uppercase tracking-wide text-sky-300/90">
+                  <p className="text-[12px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
                     {c.conference}
                   </p>
-                  <p className="mt-2 text-[16px] font-semibold text-white">
+                  <p className="mt-2 text-[16px] font-semibold text-[var(--foreground)]">
                     {c.committee}{" "}
-                    <span className="text-white/45">·</span> {c.country}
+                    <span className="text-[rgba(232,236,244,0.45)]">·</span> {c.country}
                   </p>
-                  <p className="mt-3 text-[14px] font-medium text-white/85">
+                  <p className="mt-3 text-[14px] font-medium text-[rgba(232,236,244,0.85)]">
                     Key issue: {c.issue}
                   </p>
-                  <p className="mt-4 text-[14px] leading-relaxed text-white/65">
-                    <span className="text-white/45">What I argued: </span>
+                  <p className="mt-4 text-[14px] leading-relaxed text-[rgba(232,236,244,0.65)]">
+                    <span className="text-[rgba(232,236,244,0.45)]">What I argued: </span>
                     {c.argued}
                   </p>
                 </NoteCard>
@@ -214,7 +214,7 @@ export default function JourneyPage() {
           In WHO rooms, metrics and financing timelines decide whether bold language
           survives contact with reality. In legislative simulations, coalition economics
           dominate — your job is to make allies look competent back home. My growth was
-          learning to <strong className="text-white/88">name those pressures early</strong>{" "}
+          learning to <strong className="text-[rgba(232,236,244,0.88)]">name those pressures early</strong>{" "}
           instead of pretending every committee rewards the same speech style.
         </p>
       </Section>
