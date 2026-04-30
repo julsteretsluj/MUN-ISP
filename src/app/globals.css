@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* Dark soft UI / neumorphism — single base tone, depth from light + dark shadows */
+/* Duolingo-inspired light + playful soft UI */
 :root {
-  --background: #1e222a;
-  --foreground: #e8ecf4;
-  --neu-canvas: #1a1e26;
-  --neu-surface: #262b34;
-  --neu-elevated: #2c323d;
-  --neu-shadow-dark: rgba(0, 0, 0, 0.48);
-  --neu-shadow-light: rgba(255, 255, 255, 0.06);
-  --neu-inset-dark: rgba(0, 0, 0, 0.42);
-  --neu-accent: #8ab4ff;
-  --neu-accent-dim: rgba(138, 180, 255, 0.18);
-  --neu-warm: rgba(255, 214, 140, 0.14);
-  --neu-warm-border: rgba(255, 206, 120, 0.22);
+  --background: #f5ffe8;
+  --foreground: #1f2c1b;
+  --neu-canvas: #efffd8;
+  --neu-surface: #3e6f38;
+  --neu-elevated: #4f8548;
+  --neu-shadow-dark: rgba(34, 70, 31, 0.3);
+  --neu-shadow-light: rgba(255, 255, 255, 0.7);
+  --neu-inset-dark: rgba(30, 68, 28, 0.24);
+  --neu-accent: #1cb0f6;
+  --neu-accent-dim: rgba(28, 176, 246, 0.22);
+  --neu-warm: rgba(255, 200, 70, 0.28);
+  --neu-warm-border: rgba(255, 168, 0, 0.42);
 }
 
 @theme inline {
@@ -30,7 +30,11 @@ body {
 
 body {
   margin: 0;
-  background: var(--neu-canvas);
+  background:
+    radial-gradient(1200px 800px at 12% 8%, rgba(88, 204, 2, 0.18), transparent 55%),
+    radial-gradient(900px 700px at 86% 20%, rgba(28, 176, 246, 0.14), transparent 50%),
+    radial-gradient(900px 700px at 70% 88%, rgba(255, 180, 0, 0.14), transparent 55%),
+    var(--neu-canvas);
   color: var(--foreground);
   font-family:
     ui-sans-serif,
@@ -50,8 +54,8 @@ body {
   background: var(--neu-surface);
   border-radius: 1.25rem;
   box-shadow:
-    10px 10px 22px var(--neu-shadow-dark),
-    -8px -8px 18px var(--neu-shadow-light);
+    8px 8px 20px var(--neu-shadow-dark),
+    -7px -7px 16px var(--neu-shadow-light);
 }
 
 /* Concave / pressed well */
@@ -60,7 +64,7 @@ body {
   border-radius: 1rem;
   box-shadow:
     inset 6px 6px 14px var(--neu-inset-dark),
-    inset -4px -4px 12px var(--neu-shadow-light);
+    inset -4px -4px 12px rgba(255, 255, 255, 0.45);
 }
 
 /* Subtle raised chip / button */
@@ -78,7 +82,7 @@ body {
 .neu-chip:hover {
   box-shadow:
     5px 5px 12px var(--neu-shadow-dark),
-    -4px -4px 10px var(--neu-shadow-light);
+    -4px -4px 10px rgba(255, 255, 255, 0.55);
 }
 
 .neu-chip:active {
@@ -94,11 +98,11 @@ body {
   box-shadow:
     4px 4px 10px rgba(0, 0, 0, 0.35),
     -2px -2px 8px rgba(138, 180, 255, 0.08);
-  color: var(--neu-accent);
+  color: #0c5073;
 }
 
 .neu-text-muted {
-  color: rgba(232, 236, 244, 0.58);
+  color: rgba(34, 52, 28, 0.68);
 }
 
 .neu-link {
@@ -107,5 +111,5 @@ body {
 }
 
 .neu-link:hover {
-  color: #b8d4ff;
+  color: #0e7cb0;
 }
