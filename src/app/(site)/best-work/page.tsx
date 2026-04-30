@@ -69,7 +69,7 @@ export default function BestWorkPage() {
       <PageIntro eyebrow="Page 4 · Evidence of growth" title="My best work">
         <p>
           Draft reflections below are templates you can swap for PDFs — meanwhile,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">official scans</strong> for recognised position
+          <strong className="text-[rgba(15,23,42,0.88)]">official scans</strong> for recognised position
           papers and other awards live in the{" "}
           <Link href="/#certificates" className="neu-link font-medium">
             certificate gallery
@@ -78,17 +78,17 @@ export default function BestWorkPage() {
           <Link href="/resources" className="neu-link font-medium">
             Resources page
           </Link>
-          . <strong className="text-[rgba(232,236,244,0.88)]">WHO · Afghanistan</strong>,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">INTERPOL · France (MUN107 IV)</strong>,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">CSTD · Germany</strong>,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">UNOOSA · Israel (SISBMUN III)</strong>,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">WHO · New Zealand (STAMUN)</strong>,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">
+          . <strong className="text-[rgba(15,23,42,0.88)]">WHO · Afghanistan</strong>,{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">INTERPOL · France (MUN107 IV)</strong>,{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">CSTD · Germany</strong>,{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">UNOOSA · Israel (SISBMUN III)</strong>,{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">WHO · New Zealand (STAMUN)</strong>,{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">
             HCC · Pierre Mendès France (HEXAMUN &apos;26)
           </strong>
-          , <strong className="text-[rgba(232,236,244,0.88)]">WHO · Belgium</strong>,{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">UNODC · Nicaragua</strong>, and{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">USCC · Ted Cruz (THAIMUN XIII)</strong>{" "}
+          , <strong className="text-[rgba(15,23,42,0.88)]">WHO · Belgium</strong>,{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">UNODC · Nicaragua</strong>, and{" "}
+          <strong className="text-[rgba(15,23,42,0.88)]">USCC · Ted Cruz (THAIMUN XIII)</strong>{" "}
           position papers (PDF) are listed in{" "}
           <Link href="/resources" className="neu-link font-medium">
             Resources
@@ -103,7 +103,7 @@ export default function BestWorkPage() {
         <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
           Draft resolutions — submitted PDFs
         </h2>
-        <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
+        <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
           Nine committee resolutions as merged or co-sponsored drafts (WHO 1.2 draft and
           copy, CISMUN 1.1, UNOOSA, CSTD, ECOSOC, GA Bloc C, INTERPOL, UNODC). Open
           directly in-browser.
@@ -112,10 +112,10 @@ export default function BestWorkPage() {
           {resolutions.map((r) => (
             <li key={r.id}>
               <div className="neu-inset flex h-full flex-col p-5">
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(232,236,244,0.45)]">
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
                   PDF · Resolution 1.2
                 </p>
-                <p className="mt-2 flex-1 text-[15px] font-medium leading-snug text-[rgba(232,236,244,0.9)]">
+                <p className="mt-2 flex-1 text-[15px] font-medium leading-snug text-[rgba(15,23,42,0.9)]">
                   {r.label}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -123,7 +123,7 @@ export default function BestWorkPage() {
                     href={r.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="neu-chip rounded-xl px-3 py-2 text-[13px] text-[rgba(232,236,244,0.88)]"
+                    className="neu-chip rounded-xl px-3 py-2 text-[13px] text-[rgba(15,23,42,0.88)]"
                   >
                     Open PDF
                   </Link>
@@ -145,7 +145,7 @@ export default function BestWorkPage() {
         <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
           Position paper awards — scanned certificates
         </h2>
-        <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
+        <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
           Three conferences recognised Best Position Paper performance (INTERPOL, CSTD,
           WHO). Click a thumbnail to open the full-resolution image.
         </p>
@@ -166,7 +166,7 @@ export default function BestWorkPage() {
                     className="h-full w-full object-cover object-top opacity-95 transition group-hover:opacity-100"
                   />
                 </div>
-                <p className="border-t border-[rgba(255,255,255,0.06)] px-3 py-3 text-[12px] leading-snug text-[rgba(232,236,244,0.75)]">
+                <p className="border-t border-[rgba(255,255,255,0.06)] px-3 py-3 text-[12px] leading-snug text-[rgba(51,65,85,0.75)]">
                   {c.label}
                 </p>
               </Link>
@@ -180,7 +180,7 @@ export default function BestWorkPage() {
         <p>
           My early papers sounded confident but relied on thin sources. Over time, the
           improvement wasn’t “more words” — it was{" "}
-          <strong className="text-[rgba(232,236,244,0.95)]">better mechanisms + harder tests for my own claims</strong>
+          <strong className="text-[rgba(15,23,42,0.95)]">better mechanisms + harder tests for my own claims</strong>
           . The evidence sections became shorter but heavier: fewer quotes, more
           institution-grade references.
         </p>
@@ -193,27 +193,27 @@ export default function BestWorkPage() {
             className="neu-inset p-6 sm:p-8"
           >
             <div className="flex flex-wrap items-center gap-3">
-              <span className="neu-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(232,236,244,0.55)]">
+              <span className="neu-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.55)]">
                 {p.type}
               </span>
               <h2 className="text-xl font-semibold text-[var(--foreground)]">{p.title}</h2>
             </div>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-[rgba(232,236,244,0.7)]">
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
               <p>
-                <span className="font-medium text-[rgba(232,236,244,0.85)]">Evidence & craft: </span>
+                <span className="font-medium text-[rgba(30,41,59,0.85)]">Evidence & craft: </span>
                 {p.strength}
               </p>
               <p>
-                <span className="font-medium text-[rgba(232,236,244,0.85)]">Reflection: </span>
+                <span className="font-medium text-[rgba(30,41,59,0.85)]">Reflection: </span>
                 {p.reflection}
               </p>
               <p>
-                <span className="font-medium text-[rgba(232,236,244,0.85)]">What I’d do differently now: </span>
+                <span className="font-medium text-[rgba(30,41,59,0.85)]">What I’d do differently now: </span>
                 {p.evolve}
               </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
-              <span className="neu-inset rounded-xl border border-dashed border-[rgba(255,255,255,0.08)] px-3 py-2 text-[12px] text-[rgba(232,236,244,0.45)]">
+              <span className="neu-inset rounded-xl border border-dashed border-[rgba(255,255,255,0.08)] px-3 py-2 text-[12px] text-[rgba(100,116,139,0.45)]">
                 Attach your PDF / link in your final version
               </span>
               <Link
@@ -230,7 +230,7 @@ export default function BestWorkPage() {
       <Section title="How evidence strengthened arguments">
         <p>
           The strongest clauses I contributed weren’t emotionally loud — they were{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">specific enough to coordinate behavior</strong>
+          <strong className="text-[rgba(15,23,42,0.88)]">specific enough to coordinate behavior</strong>
           : timelines, triggers, verification hooks, and dispute pathways. Evidence didn’t
           “win” alone; it gave allies something defensible back home.
         </p>

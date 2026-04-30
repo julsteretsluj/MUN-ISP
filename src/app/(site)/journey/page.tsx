@@ -140,7 +140,7 @@ export default function JourneyPage() {
       <PageIntro eyebrow="Page 2 · Compare & analyse" title="My MUN journey">
         <p>
           Across several conferences, the same skill showed up again and again:{" "}
-          <strong className="text-[rgba(232,236,244,0.9)]">
+          <strong className="text-[rgba(15,23,42,0.9)]">
             translating national interests into negotiable text
           </strong>
           . Below I group conferences by <em>theme</em> — crisis/security, health/science,
@@ -167,7 +167,7 @@ export default function JourneyPage() {
       <Section title="Themes (not just a timeline)">
         <p>
           Grouping by theme answers:{" "}
-          <strong className="text-[rgba(232,236,244,0.88)]">
+          <strong className="text-[rgba(15,23,42,0.88)]">
             what transfers across committees — and what doesn’t?
           </strong>
         </p>
@@ -182,7 +182,7 @@ export default function JourneyPage() {
               <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
                 {theme.name}
               </h2>
-              <p className="max-w-xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
+              <p className="max-w-xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
                 {theme.blurb}
               </p>
             </div>
@@ -195,13 +195,13 @@ export default function JourneyPage() {
                   </p>
                   <p className="mt-2 text-[16px] font-semibold text-[var(--foreground)]">
                     {c.committee}{" "}
-                    <span className="text-[rgba(232,236,244,0.45)]">·</span> {c.country}
+                    <span className="text-[rgba(100,116,139,0.45)]">·</span> {c.country}
                   </p>
-                  <p className="mt-3 text-[14px] font-medium text-[rgba(232,236,244,0.85)]">
+                  <p className="mt-3 text-[14px] font-medium text-[rgba(30,41,59,0.85)]">
                     Key issue: {c.issue}
                   </p>
-                  <p className="mt-4 text-[14px] leading-relaxed text-[rgba(232,236,244,0.65)]">
-                    <span className="text-[rgba(232,236,244,0.45)]">What I argued: </span>
+                  <p className="mt-4 text-[14px] leading-relaxed text-[rgba(100,116,139,0.65)]">
+                    <span className="text-[rgba(100,116,139,0.45)]">What I argued: </span>
                     {c.argued}
                   </p>
                 </NoteCard>
@@ -217,7 +217,7 @@ export default function JourneyPage() {
           In WHO rooms, metrics and financing timelines decide whether bold language
           survives contact with reality. In legislative simulations, coalition economics
           dominate — your job is to make allies look competent back home. My growth was
-          learning to <strong className="text-[rgba(232,236,244,0.88)]">name those pressures early</strong>{" "}
+          learning to <strong className="text-[rgba(15,23,42,0.88)]">name those pressures early</strong>{" "}
           instead of pretending every committee rewards the same speech style.
         </p>
       </Section>

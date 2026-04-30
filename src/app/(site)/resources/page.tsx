@@ -30,17 +30,17 @@ export default function ResourcesPage() {
         <NoteCard>
           <LastEditedRow>Apr 2026 · starter strategy pass</LastEditedRow>
           <h2 className="text-lg font-semibold text-[var(--foreground)]">Position papers</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(232,236,244,0.7)] marker:text-[var(--neu-accent)]">
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)] marker:text-[var(--neu-accent)]">
             <li>
-              <strong className="text-[rgba(232,236,244,0.85)]">Beginners:</strong> Use the “constraint
+              <strong className="text-[rgba(30,41,59,0.85)]">Beginners:</strong> Use the “constraint
               paragraph” — economy, geography, politics — before solutions.
             </li>
             <li>
-              <strong className="text-[rgba(232,236,244,0.85)]">Experienced:</strong> Spend half your prep
+              <strong className="text-[rgba(30,41,59,0.85)]">Experienced:</strong> Spend half your prep
               finding <em>negotiable</em> clauses allies can say yes to — not only critique.
             </li>
           </ul>
-          <p className="mt-4 text-[13px] text-[rgba(232,236,244,0.45)]">
+          <p className="mt-4 text-[13px] text-[rgba(100,116,139,0.45)]">
             Based on revision patterns where strong draft resolutions failed because PPs
             didn’t anticipate coalition seams.
           </p>
@@ -49,13 +49,13 @@ export default function ResourcesPage() {
         <NoteCard>
           <LastEditedRow>Apr 2026 · caucus prompts improved</LastEditedRow>
           <h2 className="text-lg font-semibold text-[var(--foreground)]">Debate & caucus</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(232,236,244,0.7)] marker:text-[rgba(196,160,255,0.75)]">
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)] marker:text-[rgba(196,160,255,0.75)]">
             <li>
-              Replace monologue with <strong className="text-[rgba(232,236,244,0.85)]">three questions</strong>{" "}
+              Replace monologue with <strong className="text-[rgba(30,41,59,0.85)]">three questions</strong>{" "}
               you’ll ask in unmoderated caucus before you enter the room.
             </li>
             <li>
-              Build a <strong className="text-[rgba(232,236,244,0.85)]">merge map</strong>: who needs what
+              Build a <strong className="text-[rgba(30,41,59,0.85)]">merge map</strong>: who needs what
               phrase to go home without embarrassment — coalition stability is language
               stability.
             </li>
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
         <NoteCard>
           <LastEditedRow>Apr 2026 · sourcing checklist updated</LastEditedRow>
           <h2 className="text-lg font-semibold text-[var(--foreground)]">Evidence habits</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(232,236,244,0.7)] marker:text-[rgba(255,180,120,0.85)]">
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)] marker:text-[rgba(255,180,120,0.85)]">
             <li>
               Triangulate: official government / UN technical / one independent watchdog.
             </li>
@@ -78,7 +78,7 @@ export default function ResourcesPage() {
         <NoteCard>
           <LastEditedRow>Apr 2026 · examples expanded</LastEditedRow>
           <h2 className="text-lg font-semibold text-[var(--foreground)]">Examples</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[rgba(232,236,244,0.7)]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
             Place anonymized excerpts in your final portfolio: one strong operative
             paragraph, one weaker excerpt with annotations on why it fails, and one revised
             paragraph — readers learn faster from contrast than from polish alone.
@@ -105,8 +105,8 @@ export default function ResourcesPage() {
         <LastEditedRow>Apr 2026 · prep PDFs consolidated</LastEditedRow>
         <p>
           This site includes a full prep catalog (including{" "}
-          <strong className="text-[rgba(232,236,244,0.85)]">Certificates</strong> and{" "}
-          <strong className="text-[rgba(232,236,244,0.85)]">Resolutions</strong> PDFs) and it
+          <strong className="text-[rgba(30,41,59,0.85)]">Certificates</strong> and{" "}
+          <strong className="text-[rgba(30,41,59,0.85)]">Resolutions</strong> PDFs) and it
           keeps evidence organised when nerves spike before session.
         </p>
         <p>
@@ -228,7 +228,7 @@ export default function ResourcesPage() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="neu-chip block rounded-xl px-3 py-2 text-[13px] text-[rgba(232,236,244,0.85)]"
+                        className="neu-chip block rounded-xl px-3 py-2 text-[13px] text-[rgba(30,41,59,0.85)]"
                       >
                         {item.label}
                       </Link>

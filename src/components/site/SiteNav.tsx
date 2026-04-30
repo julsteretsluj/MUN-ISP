@@ -30,7 +30,7 @@ export function SiteNav() {
         </Link>
 
         <div className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
-          <p className="neu-inset truncate px-3 py-2 text-[13px] text-[rgba(232,236,244,0.75)]">
+          <p className="neu-inset truncate px-3 py-2 text-[13px] text-[rgba(51,65,85,0.75)]">
             {current.label}
           </p>
         </div>
@@ -44,7 +44,7 @@ export function SiteNav() {
           </Link>
           <button
             type="button"
-            className="neu-chip rounded-xl p-2 text-[rgba(232,236,244,0.85)] lg:hidden"
+            className="neu-chip rounded-xl p-2 text-[rgba(30,41,59,0.85)] lg:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
@@ -62,7 +62,7 @@ export function SiteNav() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-2.5 text-[14px] text-[rgba(232,236,244,0.88)] transition hover:bg-[var(--neu-elevated)]"
+                className="rounded-xl px-3 py-2.5 text-[14px] text-[rgba(15,23,42,0.88)] transition hover:bg-[var(--neu-elevated)]"
               >
                 {label}
               </Link>

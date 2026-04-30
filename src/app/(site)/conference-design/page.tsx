@@ -10,8 +10,8 @@ export default function ConferenceDesignPage() {
     <>
       <PageIntro eyebrow="Page 6 · Apply learning" title="My conference design">
         <p>
-          This page is formatted like an Apple Notes workspace and uses my actual planning brief for{" "}
-          <strong className="text-[rgba(232,236,244,0.92)]">SEAMUN I</strong>, including strategy,
+          This page uses my actual planning brief for{" "}
+          <strong className="text-[rgba(15,23,42,0.92)]">SEAMUN I</strong>, including strategy,
           operations, academic structure, and delegate systems. The conference model is
           built as a non-profit, tech-forward format designed for accessibility and
           academic rigor.
@@ -20,7 +20,7 @@ export default function ConferenceDesignPage() {
 
       <div className="grid gap-5 lg:grid-cols-[280px_1fr]">
         <aside className="neu-inset p-3">
-          <p className="px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-[rgba(232,236,244,0.45)]">
+          <p className="px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
             Folders
           </p>
           <div className="space-y-1">
@@ -40,7 +40,7 @@ export default function ConferenceDesignPage() {
                 className={`flex w-full items-center rounded-xl px-3 py-2 text-left text-[13px] transition ${
                   i === 0
                     ? "neu-inset text-[var(--foreground)]"
-                    : "text-[rgba(232,236,244,0.65)] hover:bg-[var(--neu-elevated)] hover:text-[var(--foreground)] hover:shadow-[4px_4px_10px_rgba(0,0,0,0.35)]"
+                    : "text-[rgba(100,116,139,0.65)] hover:bg-[var(--neu-elevated)] hover:text-[var(--foreground)] hover:shadow-[4px_4px_10px_rgba(0,0,0,0.35)]"
                 }`}
               >
                 {item}

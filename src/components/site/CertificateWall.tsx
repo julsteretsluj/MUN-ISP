@@ -25,12 +25,12 @@ export function CertificateWall() {
           <h2 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
             Certificates & evidence
           </h2>
-          <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-[rgba(232,236,244,0.55)]">
+          <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
             Ten official certificates from six conferences — participation and awards.
             Open any tile to view the scan.
           </p>
         </div>
-        <span className="text-[12px] font-medium tabular-nums text-[rgba(232,236,244,0.45)]">
+        <span className="text-[12px] font-medium tabular-nums text-[rgba(100,116,139,0.45)]">
           {items.length} files
         </span>
       </div>
@@ -39,7 +39,7 @@ export function CertificateWall() {
           <button
             type="button"
             onClick={() => scrollByCards("left")}
-            className="neu-chip pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full text-[rgba(232,236,244,0.85)]"
+            className="neu-chip pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full text-[rgba(30,41,59,0.85)]"
             aria-label="Scroll certificates left"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -47,7 +47,7 @@ export function CertificateWall() {
           <button
             type="button"
             onClick={() => scrollByCards("right")}
-            className="neu-chip pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full text-[rgba(232,236,244,0.85)]"
+            className="neu-chip pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full text-[rgba(30,41,59,0.85)]"
             aria-label="Scroll certificates right"
           >
             <ChevronRight className="h-4 w-4" />
@@ -81,7 +81,7 @@ export function CertificateWall() {
                     className="h-full w-full object-contain opacity-95 transition duration-300 group-hover:scale-[1.02] group-hover:opacity-100"
                   />
                 </div>
-                <p className="border-t border-[rgba(255,255,255,0.06)] px-3 py-3 text-[12px] leading-snug text-[rgba(232,236,244,0.75)] transition group-hover:text-[rgba(232,236,244,0.92)]">
+                <p className="border-t border-[rgba(255,255,255,0.06)] px-3 py-3 text-[12px] leading-snug text-[rgba(51,65,85,0.75)] transition group-hover:text-[rgba(15,23,42,0.92)]">
                   {c.label}
                 </p>
               </Link>

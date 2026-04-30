@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageIntro, Section } from "@/components/site/Prose";
 import { CountriesMap } from "@/components/site/CountriesMap";
+import { ConferenceTimeline } from "@/components/site/ConferenceTimeline";
 
 export const metadata = {
   title: "Experience & understanding",
@@ -20,6 +21,7 @@ export default function ExperienceUnderstandingPage() {
       </PageIntro>
 
       <CountriesMap />
+      <ConferenceTimeline />
 
       <Section title="Explore this tab">
         <div className="grid gap-3 md:grid-cols-2">
