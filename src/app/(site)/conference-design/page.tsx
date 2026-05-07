@@ -119,7 +119,7 @@ export default function ConferenceDesignPage() {
               <section>
                 <h3 className="text-lg font-semibold text-black/85">Committees & structure</h3>
                 <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-                  <li className="rounded-xl border border-black/10 bg-emerald-100/45 p-3">
+                  <li className="rounded-xl border border-black/10 bg-sky-100/45 p-3">
                     <strong className="text-black/85">Beginner stream</strong>
                     <p className="mt-1 text-[13px] text-black/70">
                       ECOSOC, F1, Press Corps, UNICEF (ESL)
@@ -341,7 +341,7 @@ function CommitteeBlock({
 }) {
   const tint =
     title === "Beginner"
-      ? "from-emerald-500/20 to-emerald-300/5"
+      ? "from-sky-500/20 to-sky-300/5"
       : title === "Intermediate"
         ? "from-amber-400/20 to-amber-300/5"
         : "from-rose-400/20 to-rose-300/5";

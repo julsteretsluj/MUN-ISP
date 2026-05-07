@@ -34,11 +34,11 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="neu-inset mb-12 px-6 py-5 sm:px-7">
+    <section className="neu-raised mb-12 px-6 py-5 sm:px-7">
       <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
         {title}
       </h2>
-      <div className="space-y-4 text-[15px] leading-relaxed text-[rgba(71,85,105,0.68)]">
+      <div className="space-y-4 text-[15px] leading-relaxed text-[rgba(51,65,85,0.82)]">
         {children}
       </div>
     </section>
@@ -53,18 +53,11 @@ export function Callout({
   children: ReactNode;
 }) {
   return (
-    <aside
-      className="rounded-2xl px-5 py-4"
-      style={{
-        background: "var(--neu-warm)",
-        boxShadow:
-          "8px 8px 18px rgba(0,0,0,0.35), -6px -6px 14px rgba(255,220,160,0.06), inset 0 1px 0 rgba(255,255,255,0.04)",
-      }}
-    >
-      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#ffd49a]">
+    <aside className="mb-10 rounded-2xl border border-[rgba(51,95,214,0.22)] bg-[rgba(51,95,214,0.06)] px-5 py-4 shadow-[0_10px_22px_rgba(51,95,214,0.08)]">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[rgba(37,99,235,0.9)]">
         {title}
       </p>
-      <div className="mt-2 text-[14px] leading-relaxed text-[rgba(15,23,42,0.88)]">
+      <div className="mt-2 text-[14px] leading-relaxed text-[rgba(30,41,59,0.9)]">
         {children}
       </div>
     </aside>
@@ -87,7 +80,7 @@ export function NoteCard({ children }: { children: ReactNode }) {
 
 export function PinnedMeta({ children }: { children: ReactNode }) {
   return (
-    <div className="neu-inset mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[11px] text-[rgba(100,116,139,0.62)]">
+    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[rgba(148,163,184,0.28)] bg-white px-3 py-1.5 text-[11px] text-[rgba(71,85,105,0.72)] shadow-[0_6px_14px_rgba(15,23,42,0.06)]">
       <span className="text-[var(--neu-accent)]">●</span>
       <span>{children}</span>
     </div>
@@ -96,7 +89,7 @@ export function PinnedMeta({ children }: { children: ReactNode }) {
 
 export function LastEditedRow({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-3 text-[11px] uppercase tracking-[0.1em] text-[rgba(100,116,139,0.42)]">
+    <p className="mb-3 text-[11px] uppercase tracking-[0.1em] text-[rgba(100,116,139,0.58)]">
       Last edited {children}
     </p>
   );

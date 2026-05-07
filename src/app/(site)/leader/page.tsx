@@ -43,13 +43,13 @@ export default function LeaderPage() {
 
       <Section title="What worked well">
         <ul className="space-y-3">
-          <li className="rounded-xl border border-emerald-400/15 bg-emerald-400/5 px-4 py-3 text-[15px] text-white/75">
-            <strong className="text-emerald-200/95">Micro-clinics:</strong> 20-minute
+          <li className="rounded-xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.06)] px-4 py-3 text-[15px] text-[rgba(71,85,105,0.8)]">
+            <strong className="text-[rgba(30,41,59,0.92)]">Micro-clinics:</strong> 20-minute
             rotations on sourcing, clause drafting, and caucus questions — fast feedback
             beats one long lecture.
           </li>
-          <li className="rounded-xl border border-emerald-400/15 bg-emerald-400/5 px-4 py-3 text-[15px] text-white/75">
-            <strong className="text-emerald-200/95">Shared exemplars:</strong> anonymized
+          <li className="rounded-xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.06)] px-4 py-3 text-[15px] text-[rgba(71,85,105,0.8)]">
+            <strong className="text-[rgba(30,41,59,0.92)]">Shared exemplars:</strong> anonymized
             good/bad operative paragraphs — delegates improve fastest with contrast.
           </li>
         </ul>
