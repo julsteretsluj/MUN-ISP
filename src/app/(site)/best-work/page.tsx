@@ -101,7 +101,7 @@ export default function BestWorkPage() {
       <section className="mb-14 rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7">
         <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="mb-3 inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
+            <div className="mb-3 inline-flex items-center rounded-full border border-[rgba(148,163,184,0.35)] bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(51,65,85,0.82)]">
               Evidence Stack
             </div>
             <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
@@ -112,13 +112,13 @@ export default function BestWorkPage() {
               copy, CISMUN 1.1, UNOOSA, CSTD, ECOSOC, GA Bloc C, INTERPOL, UNODC). Open
               directly in-browser.
             </p>
-            <div className="mt-4 h-px w-full bg-gradient-to-r from-sky-400/50 to-sky-400/0" />
+            <div className="mt-4 h-px w-full bg-gradient-to-r from-[rgba(148,163,184,0.45)] to-transparent" />
             <LastEditedRow>Apr 2026 · all resolution uploads linked</LastEditedRow>
           </aside>
           <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {resolutions.map((r) => (
             <li key={r.id}>
-              <div className="flex h-full flex-col rounded-2xl border border-[rgba(148,163,184,0.2)] bg-white p-5 transition hover:border-sky-200 hover:shadow-[0_10px_26px_rgba(14,165,233,0.14)]">
+              <div className="flex h-full flex-col rounded-2xl border border-[rgba(148,163,184,0.2)] bg-white p-5 transition hover:border-[rgba(99,102,241,0.3)] hover:shadow-[0_10px_26px_rgba(99,102,241,0.14)]">
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
                   PDF · Resolution 1.2
                 </p>
@@ -151,7 +151,7 @@ export default function BestWorkPage() {
       <section className="mb-14 rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7">
         <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="mb-3 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
+            <div className="mb-3 inline-flex items-center rounded-full border border-[rgba(148,163,184,0.35)] bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(51,65,85,0.82)]">
               Awards Gallery
             </div>
             <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
@@ -161,7 +161,7 @@ export default function BestWorkPage() {
               Three conferences recognised Best Position Paper performance (INTERPOL, CSTD,
               WHO). Click a thumbnail to open the full-resolution image.
             </p>
-            <div className="mt-4 h-px w-full bg-gradient-to-r from-emerald-400/50 to-emerald-400/0" />
+            <div className="mt-4 h-px w-full bg-gradient-to-r from-[rgba(148,163,184,0.45)] to-transparent" />
             <LastEditedRow>Apr 2026 · award scans curated</LastEditedRow>
           </aside>
           <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -215,15 +215,15 @@ export default function BestWorkPage() {
               <h2 className="text-xl font-semibold text-[var(--foreground)]">{p.title}</h2>
             </div>
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
-              <p className="rounded-xl bg-[rgba(59,130,246,0.06)] px-3 py-2">
+              <p className="rounded-xl bg-[rgba(15,23,42,0.04)] px-3 py-2">
                 <span className="font-medium text-[rgba(30,41,59,0.85)]">Evidence & craft: </span>
                 {p.strength}
               </p>
-              <p className="rounded-xl bg-[rgba(16,185,129,0.06)] px-3 py-2">
+              <p className="rounded-xl bg-[rgba(15,23,42,0.04)] px-3 py-2">
                 <span className="font-medium text-[rgba(30,41,59,0.85)]">Reflection: </span>
                 {p.reflection}
               </p>
-              <p className="rounded-xl bg-[rgba(168,85,247,0.06)] px-3 py-2">
+              <p className="rounded-xl bg-[rgba(15,23,42,0.04)] px-3 py-2">
                 <span className="font-medium text-[rgba(30,41,59,0.85)]">What I’d do differently now: </span>
                 {p.evolve}
               </p>
