@@ -98,7 +98,10 @@ export default function BestWorkPage() {
       </PageIntro>
       <PinnedMeta>Pinned note · Artifacts with reflection + revision logic</PinnedMeta>
 
-      <section className="mb-14">
+      <section className="neu-raised mb-14 p-5 sm:p-6">
+        <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-sky-500/20 to-cyan-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
+          Evidence Stack
+        </div>
         <LastEditedRow>Apr 2026 · all resolution uploads linked</LastEditedRow>
         <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
           Draft resolutions — submitted PDFs
@@ -111,7 +114,7 @@ export default function BestWorkPage() {
         <ul className="grid gap-4 md:grid-cols-3">
           {resolutions.map((r) => (
             <li key={r.id}>
-              <div className="neu-inset flex h-full flex-col p-5">
+              <div className="neu-inset flex h-full flex-col rounded-2xl p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
                   PDF · Resolution 1.2
                 </p>
@@ -140,7 +143,10 @@ export default function BestWorkPage() {
         </ul>
       </section>
 
-      <section className="mb-14">
+      <section className="neu-raised mb-14 p-5 sm:p-6">
+        <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-emerald-500/20 to-lime-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
+          Awards Gallery
+        </div>
         <LastEditedRow>Apr 2026 · award scans curated</LastEditedRow>
         <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
           Position paper awards — scanned certificates
@@ -190,7 +196,7 @@ export default function BestWorkPage() {
         {PIECES.map((p) => (
           <article
             key={p.title}
-            className="neu-inset p-6 sm:p-8"
+            className="neu-raised overflow-hidden p-6 sm:p-8"
           >
             <div className="flex flex-wrap items-center gap-3">
               <span className="neu-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.55)]">
@@ -199,15 +205,15 @@ export default function BestWorkPage() {
               <h2 className="text-xl font-semibold text-[var(--foreground)]">{p.title}</h2>
             </div>
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
-              <p>
+              <p className="rounded-xl bg-[rgba(59,130,246,0.06)] px-3 py-2">
                 <span className="font-medium text-[rgba(30,41,59,0.85)]">Evidence & craft: </span>
                 {p.strength}
               </p>
-              <p>
+              <p className="rounded-xl bg-[rgba(16,185,129,0.06)] px-3 py-2">
                 <span className="font-medium text-[rgba(30,41,59,0.85)]">Reflection: </span>
                 {p.reflection}
               </p>
-              <p>
+              <p className="rounded-xl bg-[rgba(168,85,247,0.06)] px-3 py-2">
                 <span className="font-medium text-[rgba(30,41,59,0.85)]">What I’d do differently now: </span>
                 {p.evolve}
               </p>

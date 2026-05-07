@@ -11,7 +11,7 @@ export default function ReflectionPage() {
       <PageIntro eyebrow="Page 8 · Deep learning" title="Final reflection">
         <p>
           This closing section connects the portfolio back to one question:{" "}
-          <strong className="text-white/90">
+          <strong className="text-[rgba(15,23,42,0.9)]">
             what did I learn — and what will I carry forward?
           </strong>
         </p>
@@ -32,14 +32,14 @@ export default function ReflectionPage() {
       </Section>
 
       <Section title="How my communication improved">
-        <ul className="space-y-3 text-[15px] leading-relaxed text-white/70">
+        <ul className="space-y-3 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
           <li>
-            <strong className="text-white/88">Listening became tactical:</strong> I track
+            <strong className="text-[rgba(15,23,42,0.88)]">Listening became tactical:</strong> I track
             objections not to “win” the interrupt, but to revise language so allies stay
             inside the tent.
           </li>
           <li>
-            <strong className="text-white/88">Precision replaced volume:</strong> shorter
+            <strong className="text-[rgba(15,23,42,0.88)]">Precision replaced volume:</strong> shorter
             sentences with clearer mechanisms survived caucus better than ornate rhetoric.
           </li>
         </ul>
@@ -54,12 +54,18 @@ export default function ReflectionPage() {
         </p>
       </Section>
 
-      <PullQuote>
-        If this portfolio has a spine, it’s simple: learn in public, credit sources,
-        build reusable tools, and treat debate as preparation for coordination — not
-        performance alone.
-      </PullQuote>
+      <div className="neu-raised mb-10 overflow-hidden p-5 sm:p-6">
+        <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-violet-700">
+          Core Principle
+        </div>
+        <PullQuote>
+          If this portfolio has a spine, it’s simple: learn in public, credit sources,
+          build reusable tools, and treat debate as preparation for coordination — not
+          performance alone.
+        </PullQuote>
+      </div>
 
+      <div className="neu-raised mb-10 p-5 sm:p-6">
       <Callout title="Level 6 · Connect the whole project">
         <p className="mb-3">
           <Link href="/journey" className="neu-link font-medium">
@@ -92,6 +98,7 @@ export default function ReflectionPage() {
           can be training for ethical negotiation under imperfect information.
         </p>
       </Callout>
+      </div>
 
       <Section title="Impact on my future">
         <p>

@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, Star } from "lucide-react";
+import { topicsForConference } from "@/lib/conference-topics";
 
 type AwardCode = "BD" | "BPP" | "VC" | "HM";
 
@@ -148,7 +149,9 @@ export function ConferenceTimeline() {
           return (
             <div key={`row-${rowIndex}`}>
               <div className="grid gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
-                {visualRow.map((item, itemIndex) => (
+                {visualRow.map((item, itemIndex) => {
+                  const topics = topicsForConference(item.conference);
+                  return (
                   <div
                     key={`${item.conference}-${item.committee}`}
                     className={itemIndex === 0 ? "md:col-start-1" : itemIndex === 1 ? "md:col-start-3" : "md:col-start-5"}
@@ -165,6 +168,12 @@ export function ConferenceTimeline() {
                       <p className="mt-1 text-[14px] font-medium text-[var(--foreground)]">
                         {item.committee} · {item.allocation}
                       </p>
+                      {topics.length ? (
+                        <p className="mt-2 text-[12px] leading-relaxed text-[rgba(71,85,105,0.78)]">
+                          <span className="font-semibold text-[rgba(30,41,59,0.85)]">Topic:</span>{" "}
+                          {topics[0]}
+                        </p>
+                      ) : null}
                       {item.awards?.length ? (
                         <div className="mt-2 flex flex-wrap gap-1.5">
                           {item.awards.map((code) => (
@@ -188,7 +197,7 @@ export function ConferenceTimeline() {
                       </div>
                     </article>
                   </div>
-                ))}
+                )})}
                 {visualRow.length > 1 ? (
                   <>
                     <div className="hidden place-content-center md:grid md:col-start-2">

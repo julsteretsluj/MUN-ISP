@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { topicsForConference } from "@/lib/conference-topics";
 
 type CountryPoint = {
   id: string;
@@ -24,7 +25,7 @@ const COUNTRY_POINTS: CountryPoint[] = [
   {
     id: "france",
     country: "France",
-    conference: "MUN107 IV",
+    conference: "MUN07 IV",
     committee: "INTERPOL",
     allocation: "France",
     awards: "Best Delegate + Best Position Paper",
@@ -102,13 +103,13 @@ const NON_COUNTRY_ALLOCATIONS = [
     allocation: "Ted Cruz (TX, Republican)",
   },
   {
-    conference: "Regent's MUN I",
+    conference: "Regents MUN I",
     committee: "US Congress",
     allocation: "Senator Elizabeth Warren",
     awards: "Best Delegate",
   },
   {
-    conference: "MUN107 IV",
+    conference: "MUN07 IV",
     committee: "INTERPOL",
     allocation: "Open Delegate allocation",
   },
@@ -192,6 +193,12 @@ export function CountriesMap() {
                 <span className="font-medium text-[var(--foreground)]">Allocation:</span>{" "}
                 {point.allocation}
               </p>
+              {topicsForConference(point.conference).length ? (
+                <p className="mt-1 text-[13px] text-[rgba(31,41,55,0.78)]">
+                  <span className="font-medium text-[var(--foreground)]">Topic:</span>{" "}
+                  {topicsForConference(point.conference)[0]}
+                </p>
+              ) : null}
               {point.awards ? (
                 <p className="mt-2 inline-flex items-center gap-1 rounded-full bg-[rgba(250,204,21,0.25)] px-2 py-1 text-[12px] font-medium text-[rgb(146,64,14)]">
                   <Star className="h-3.5 w-3.5 fill-[rgb(251,191,36)] text-[rgb(251,191,36)]" />

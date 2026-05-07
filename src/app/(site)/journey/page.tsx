@@ -8,6 +8,7 @@ import {
   PinnedMeta,
   Section,
 } from "@/components/site/Prose";
+import { topicsForConference } from "@/lib/conference-topics";
 
 const THEMES = [
   {
@@ -135,6 +136,29 @@ export const metadata = {
 };
 
 export default function JourneyPage() {
+  const themeAccents = [
+    "from-sky-500/20 to-cyan-400/5 text-sky-700",
+    "from-emerald-500/20 to-lime-400/5 text-emerald-700",
+    "from-violet-500/20 to-fuchsia-400/5 text-violet-700",
+  ] as const;
+
+  const topicFor = (conferenceLabel: string) => {
+    if (conferenceLabel.includes("HEXA")) return topicsForConference("HEXAMUN '26")[0];
+    if (conferenceLabel.includes("MUN107") || conferenceLabel.includes("MUN07")) {
+      return topicsForConference("MUN07 IV")[0];
+    }
+    if (conferenceLabel.includes("Regent")) return topicsForConference("Regents MUN I")[0];
+    if (conferenceLabel.includes("Newton")) return topicsForConference("NewtonMUN I")[0];
+    if (conferenceLabel.includes("STAMUN")) return topicsForConference("STAMUN XI")[0];
+    if (conferenceLabel.includes("TSIMUN")) return topicsForConference("TSIMUN I")[0];
+    if (conferenceLabel.includes("SISBMUN")) return topicsForConference("SISBMUN III")[0];
+    if (conferenceLabel.includes("THAIMUN XII")) return topicsForConference("THAIMUN XII")[0];
+    if (conferenceLabel.includes("THAIMUN XIII")) return topicsForConference("THAIMUN XIII")[0];
+    if (conferenceLabel.includes("NISMUN")) return topicsForConference("NISMUN III")[0];
+    if (conferenceLabel.includes("CISMUN")) return topicsForConference("CISMUN IV")[0];
+    return undefined;
+  };
+
   return (
     <>
       <PageIntro eyebrow="Page 2 · Compare & analyse" title="My MUN journey">
@@ -176,39 +200,58 @@ export default function JourneyPage() {
       <CountriesMap />
 
       <div className="space-y-14">
-        {THEMES.map((theme) => (
-          <section key={theme.name}>
-            <div className="mb-6 flex flex-col gap-2 pb-4 sm:flex-row sm:items-end sm:justify-between">
-              <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
-                {theme.name}
-              </h2>
-              <p className="max-w-xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
-                {theme.blurb}
-              </p>
-            </div>
-            <LastEditedRow>Apr 2026 · synthesis notes refined</LastEditedRow>
-            <div className="grid gap-6 lg:grid-cols-2">
-              {theme.items.map((c) => (
-                <NoteCard key={`${c.conference}-${c.committee}`}>
-                  <p className="text-[12px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
-                    {c.conference}
-                  </p>
-                  <p className="mt-2 text-[16px] font-semibold text-[var(--foreground)]">
-                    {c.committee}{" "}
-                    <span className="text-[rgba(100,116,139,0.45)]">·</span> {c.country}
-                  </p>
-                  <p className="mt-3 text-[14px] font-medium text-[rgba(30,41,59,0.85)]">
-                    Key issue: {c.issue}
-                  </p>
-                  <p className="mt-4 text-[14px] leading-relaxed text-[rgba(100,116,139,0.65)]">
-                    <span className="text-[rgba(100,116,139,0.45)]">What I argued: </span>
-                    {c.argued}
-                  </p>
-                </NoteCard>
-              ))}
-            </div>
-          </section>
-        ))}
+        {THEMES.map((theme, themeIndex) => {
+          const accent = themeAccents[themeIndex % themeAccents.length];
+          return (
+            <section key={theme.name} className="neu-raised overflow-hidden p-5 sm:p-6">
+              <div className={`mb-5 inline-flex items-center rounded-full bg-gradient-to-r px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${accent}`}>
+                Theme {String(themeIndex + 1).padStart(2, "0")}
+              </div>
+              <div className="mb-6 flex flex-col gap-2 pb-4 sm:flex-row sm:items-end sm:justify-between">
+                <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+                  {theme.name}
+                </h2>
+                <p className="max-w-xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
+                  {theme.blurb}
+                </p>
+              </div>
+              <LastEditedRow>Apr 2026 · synthesis notes refined</LastEditedRow>
+              <div className="grid gap-6 lg:grid-cols-2">
+                {theme.items.map((c) => {
+                  const agendaTopic = topicFor(c.conference);
+                  return (
+                    <NoteCard key={`${c.conference}-${c.committee}`}>
+                      <p className="text-[12px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                        {c.conference}
+                      </p>
+                      <p className="mt-2 text-[16px] font-semibold text-[var(--foreground)]">
+                        {c.committee}{" "}
+                        <span className="text-[rgba(100,116,139,0.45)]">·</span> {c.country}
+                      </p>
+                      <div className="mt-3 rounded-xl bg-[rgba(59,130,246,0.06)] px-3 py-2">
+                        <p className="text-[13px] font-medium text-[rgba(30,41,59,0.88)]">
+                          Key issue: {c.issue}
+                        </p>
+                      </div>
+                      {agendaTopic ? (
+                        <p className="mt-3 rounded-xl border border-dashed border-[rgba(59,130,246,0.3)] bg-white/75 px-3 py-2 text-[13px] leading-relaxed text-[rgba(71,85,105,0.78)]">
+                          <span className="font-medium text-[rgba(30,41,59,0.85)]">
+                            Agenda topic from conference docs:
+                          </span>{" "}
+                          {agendaTopic}
+                        </p>
+                      ) : null}
+                      <p className="mt-4 border-t border-[rgba(148,163,184,0.2)] pt-4 text-[14px] leading-relaxed text-[rgba(100,116,139,0.65)]">
+                        <span className="text-[rgba(100,116,139,0.45)]">What I argued: </span>
+                        {c.argued}
+                      </p>
+                    </NoteCard>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
       </div>
 
       <Section title="How different approaches met the same underlying challenge">
