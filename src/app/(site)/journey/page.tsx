@@ -3,7 +3,6 @@ import { CountriesMap } from "@/components/site/CountriesMap";
 import {
   Callout,
   LastEditedRow,
-  NoteCard,
   PageIntro,
   PinnedMeta,
   Section,
@@ -137,9 +136,21 @@ export const metadata = {
 
 export default function JourneyPage() {
   const themeAccents = [
-    "from-sky-500/20 to-cyan-400/5 text-sky-700",
-    "from-emerald-500/20 to-lime-400/5 text-emerald-700",
-    "from-violet-500/20 to-fuchsia-400/5 text-violet-700",
+    {
+      chip: "border-sky-200 bg-sky-50 text-sky-700",
+      line: "from-sky-400/50 to-sky-400/0",
+      card: "hover:border-sky-200 hover:shadow-[0_10px_26px_rgba(14,165,233,0.14)]",
+    },
+    {
+      chip: "border-emerald-200 bg-emerald-50 text-emerald-700",
+      line: "from-emerald-400/50 to-emerald-400/0",
+      card: "hover:border-emerald-200 hover:shadow-[0_10px_26px_rgba(16,185,129,0.14)]",
+    },
+    {
+      chip: "border-violet-200 bg-violet-50 text-violet-700",
+      line: "from-violet-400/50 to-violet-400/0",
+      card: "hover:border-violet-200 hover:shadow-[0_10px_26px_rgba(139,92,246,0.14)]",
+    },
   ] as const;
 
   const topicFor = (conferenceLabel: string) => {
@@ -199,55 +210,74 @@ export default function JourneyPage() {
 
       <CountriesMap />
 
-      <div className="space-y-14">
+      <div className="space-y-10">
         {THEMES.map((theme, themeIndex) => {
           const accent = themeAccents[themeIndex % themeAccents.length];
           return (
-            <section key={theme.name} className="neu-raised overflow-hidden p-5 sm:p-6">
-              <div className={`mb-5 inline-flex items-center rounded-full bg-gradient-to-r px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${accent}`}>
-                Theme {String(themeIndex + 1).padStart(2, "0")}
-              </div>
-              <div className="mb-6 flex flex-col gap-2 pb-4 sm:flex-row sm:items-end sm:justify-between">
-                <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
-                  {theme.name}
-                </h2>
-                <p className="max-w-xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
-                  {theme.blurb}
-                </p>
-              </div>
-              <LastEditedRow>Apr 2026 · synthesis notes refined</LastEditedRow>
-              <div className="grid gap-6 lg:grid-cols-2">
-                {theme.items.map((c) => {
-                  const agendaTopic = topicFor(c.conference);
-                  return (
-                    <NoteCard key={`${c.conference}-${c.committee}`}>
-                      <p className="text-[12px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
-                        {c.conference}
-                      </p>
-                      <p className="mt-2 text-[16px] font-semibold text-[var(--foreground)]">
-                        {c.committee}{" "}
-                        <span className="text-[rgba(100,116,139,0.45)]">·</span> {c.country}
-                      </p>
-                      <div className="mt-3 rounded-xl bg-[rgba(59,130,246,0.06)] px-3 py-2">
-                        <p className="text-[13px] font-medium text-[rgba(30,41,59,0.88)]">
-                          Key issue: {c.issue}
-                        </p>
-                      </div>
-                      {agendaTopic ? (
-                        <p className="mt-3 rounded-xl border border-dashed border-[rgba(59,130,246,0.3)] bg-white/75 px-3 py-2 text-[13px] leading-relaxed text-[rgba(71,85,105,0.78)]">
-                          <span className="font-medium text-[rgba(30,41,59,0.85)]">
-                            Agenda topic from conference docs:
-                          </span>{" "}
-                          {agendaTopic}
-                        </p>
-                      ) : null}
-                      <p className="mt-4 border-t border-[rgba(148,163,184,0.2)] pt-4 text-[14px] leading-relaxed text-[rgba(100,116,139,0.65)]">
-                        <span className="text-[rgba(100,116,139,0.45)]">What I argued: </span>
-                        {c.argued}
-                      </p>
-                    </NoteCard>
-                  );
-                })}
+            <section
+              key={theme.name}
+              className="relative overflow-hidden rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7"
+            >
+              <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
+                <aside className="lg:sticky lg:top-24 lg:self-start">
+                  <div
+                    className={`mb-3 inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${accent.chip}`}
+                  >
+                    Theme {String(themeIndex + 1).padStart(2, "0")}
+                  </div>
+                  <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+                    {theme.name}
+                  </h2>
+                  <p className="mt-3 text-[14px] leading-relaxed text-[rgba(71,85,105,0.68)]">
+                    {theme.blurb}
+                  </p>
+                  <div className={`mt-4 h-px w-full bg-gradient-to-r ${accent.line}`} />
+                  <LastEditedRow>Apr 2026 · synthesis notes refined</LastEditedRow>
+                </aside>
+
+                <div>
+                  <div className="grid gap-5 xl:grid-cols-2">
+                    {theme.items.map((c, itemIndex) => {
+                      const agendaTopic = topicFor(c.conference);
+                      return (
+                        <article
+                          key={`${c.conference}-${c.committee}`}
+                          className={`rounded-2xl border border-[rgba(148,163,184,0.2)] bg-white p-5 transition ${accent.card}`}
+                        >
+                          <div className="mb-2 flex items-start justify-between gap-3">
+                            <p className="text-[12px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                              {c.conference}
+                            </p>
+                            <span className="rounded-full bg-[rgba(15,23,42,0.06)] px-2 py-0.5 text-[10px] font-semibold text-[rgba(51,65,85,0.8)]">
+                              #{themeIndex + 1}.{itemIndex + 1}
+                            </span>
+                          </div>
+                          <p className="text-[16px] font-semibold text-[rgba(15,23,42,0.95)]">
+                            {c.committee}{" "}
+                            <span className="text-[rgba(100,116,139,0.45)]">·</span> {c.country}
+                          </p>
+                          <div className="mt-3 rounded-xl bg-[rgba(15,23,42,0.04)] px-3 py-2">
+                            <p className="text-[13px] font-medium text-[rgba(30,41,59,0.88)]">
+                              Key issue: {c.issue}
+                            </p>
+                          </div>
+                          {agendaTopic ? (
+                            <p className="mt-3 rounded-xl border border-dashed border-[rgba(59,130,246,0.3)] bg-white/75 px-3 py-2 text-[13px] leading-relaxed text-[rgba(71,85,105,0.78)]">
+                              <span className="font-medium text-[rgba(30,41,59,0.85)]">
+                                Agenda topic from conference docs:
+                              </span>{" "}
+                              {agendaTopic}
+                            </p>
+                          ) : null}
+                          <p className="mt-4 border-t border-[rgba(148,163,184,0.2)] pt-4 text-[14px] leading-relaxed text-[rgba(100,116,139,0.65)]">
+                            <span className="text-[rgba(100,116,139,0.45)]">What I argued: </span>
+                            {c.argued}
+                          </p>
+                        </article>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </section>
           );

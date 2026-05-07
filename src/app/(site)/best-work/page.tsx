@@ -98,23 +98,27 @@ export default function BestWorkPage() {
       </PageIntro>
       <PinnedMeta>Pinned note · Artifacts with reflection + revision logic</PinnedMeta>
 
-      <section className="neu-raised mb-14 p-5 sm:p-6">
-        <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-sky-500/20 to-cyan-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
-          Evidence Stack
-        </div>
-        <LastEditedRow>Apr 2026 · all resolution uploads linked</LastEditedRow>
-        <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
-          Draft resolutions — submitted PDFs
-        </h2>
-        <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
-          Nine committee resolutions as merged or co-sponsored drafts (WHO 1.2 draft and
-          copy, CISMUN 1.1, UNOOSA, CSTD, ECOSOC, GA Bloc C, INTERPOL, UNODC). Open
-          directly in-browser.
-        </p>
-        <ul className="grid gap-4 md:grid-cols-3">
+      <section className="mb-14 rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7">
+        <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <div className="mb-3 inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-sky-700">
+              Evidence Stack
+            </div>
+            <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+              Draft resolutions — submitted PDFs
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[rgba(71,85,105,0.68)]">
+              Nine committee resolutions as merged or co-sponsored drafts (WHO 1.2 draft and
+              copy, CISMUN 1.1, UNOOSA, CSTD, ECOSOC, GA Bloc C, INTERPOL, UNODC). Open
+              directly in-browser.
+            </p>
+            <div className="mt-4 h-px w-full bg-gradient-to-r from-sky-400/50 to-sky-400/0" />
+            <LastEditedRow>Apr 2026 · all resolution uploads linked</LastEditedRow>
+          </aside>
+          <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {resolutions.map((r) => (
             <li key={r.id}>
-              <div className="neu-inset flex h-full flex-col rounded-2xl p-5">
+              <div className="flex h-full flex-col rounded-2xl border border-[rgba(148,163,184,0.2)] bg-white p-5 transition hover:border-sky-200 hover:shadow-[0_10px_26px_rgba(14,165,233,0.14)]">
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
                   PDF · Resolution 1.2
                 </p>
@@ -140,22 +144,27 @@ export default function BestWorkPage() {
               </div>
             </li>
           ))}
-        </ul>
+          </ul>
+        </div>
       </section>
 
-      <section className="neu-raised mb-14 p-5 sm:p-6">
-        <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-emerald-500/20 to-lime-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
-          Awards Gallery
-        </div>
-        <LastEditedRow>Apr 2026 · award scans curated</LastEditedRow>
-        <h2 className="mb-4 text-xl font-semibold tracking-tight text-[var(--foreground)]">
-          Position paper awards — scanned certificates
-        </h2>
-        <p className="mb-6 max-w-2xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
-          Three conferences recognised Best Position Paper performance (INTERPOL, CSTD,
-          WHO). Click a thumbnail to open the full-resolution image.
-        </p>
-        <ul className="grid gap-5 md:grid-cols-3">
+      <section className="mb-14 rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7">
+        <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <div className="mb-3 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-700">
+              Awards Gallery
+            </div>
+            <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+              Position paper awards — scanned certificates
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-[rgba(71,85,105,0.68)]">
+              Three conferences recognised Best Position Paper performance (INTERPOL, CSTD,
+              WHO). Click a thumbnail to open the full-resolution image.
+            </p>
+            <div className="mt-4 h-px w-full bg-gradient-to-r from-emerald-400/50 to-emerald-400/0" />
+            <LastEditedRow>Apr 2026 · award scans curated</LastEditedRow>
+          </aside>
+          <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {positionPaperAwards.map((c) => (
             <li key={c.id}>
               <Link
@@ -178,7 +187,8 @@ export default function BestWorkPage() {
               </Link>
             </li>
           ))}
-        </ul>
+          </ul>
+        </div>
       </section>
 
       <Callout title="Level 6 · Improvement over time">
@@ -192,15 +202,15 @@ export default function BestWorkPage() {
         </p>
       </Callout>
 
-      <div className="grid gap-6">
-        {PIECES.map((p) => (
-          <article
-            key={p.title}
-            className="neu-raised overflow-hidden p-6 sm:p-8"
-          >
+      <div className="grid gap-6 xl:grid-cols-2">
+        {PIECES.map((p, i) => (
+          <article key={p.title} className="overflow-hidden rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-6 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-8">
             <div className="flex flex-wrap items-center gap-3">
               <span className="neu-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.55)]">
                 {p.type}
+              </span>
+              <span className="rounded-full bg-[rgba(15,23,42,0.06)] px-2 py-0.5 text-[10px] font-semibold text-[rgba(51,65,85,0.8)]">
+                #{String(i + 1).padStart(2, "0")}
               </span>
               <h2 className="text-xl font-semibold text-[var(--foreground)]">{p.title}</h2>
             </div>
