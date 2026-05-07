@@ -144,6 +144,55 @@ export function ConferenceTimeline() {
       </div>
 
       <div className="neu-raised space-y-4 p-4 sm:p-5">
+        <div className="space-y-3 md:hidden">
+          {TIMELINE.map((item) => {
+            const topics = topicsForConference(item.conference);
+            return (
+              <article key={`mobile-${item.conference}`} className="neu-inset rounded-2xl p-4">
+                <div className="flex items-start justify-between gap-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                    {item.conference}
+                  </p>
+                  <span className="rounded-full bg-[rgba(59,130,246,0.14)] px-2 py-0.5 text-[10px] font-semibold text-[rgb(29,78,216)]">
+                    #{String(item.order).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="mt-1 text-[14px] font-medium text-[var(--foreground)]">
+                  {item.committee} · {item.allocation}
+                </p>
+                {topics.length ? (
+                  <p className="mt-2 text-[12px] leading-relaxed text-[rgba(71,85,105,0.78)]">
+                    <span className="font-semibold text-[rgba(30,41,59,0.85)]">Topic:</span>{" "}
+                    {topics[0]}
+                  </p>
+                ) : null}
+                {item.awards?.length ? (
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {item.awards.map((code) => (
+                      <p
+                        key={`mobile-${item.conference}-${code}`}
+                        className="inline-flex items-center gap-1 rounded-full bg-[rgba(250,204,21,0.25)] px-2 py-1 text-[12px] font-medium text-[rgb(146,64,14)]"
+                        title={AWARD_LABELS[code]}
+                      >
+                        <Star className="h-3.5 w-3.5 fill-[rgb(251,191,36)] text-[rgb(251,191,36)]" />
+                        {code}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
+                <div className="mt-3 rounded-xl border border-dashed border-[rgba(59,130,246,0.35)] bg-white/80 px-2.5 py-2 text-[12px] text-[rgba(30,41,59,0.75)]">
+                  <span className="inline-flex items-center gap-1 font-medium text-[rgba(30,41,59,0.85)]">
+                    <CalendarDays className="h-3.5 w-3.5" />
+                    Date:
+                  </span>{" "}
+                  {item.date}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="hidden space-y-4 md:block">
         {rows.map((row, rowIndex) => {
           const leftToRight = rowIndex % 2 === 0;
           const visualRow = leftToRight ? row : [...row].reverse();
@@ -229,6 +278,7 @@ export function ConferenceTimeline() {
             </div>
           );
         })}
+        </div>
       </div>
     </section>
   );
