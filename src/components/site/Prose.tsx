@@ -53,8 +53,8 @@ export function Callout({
   children: ReactNode;
 }) {
   return (
-    <aside className="mb-10 rounded-2xl border border-[rgba(51,95,214,0.22)] bg-[rgba(51,95,214,0.06)] px-5 py-4 shadow-[0_10px_22px_rgba(51,95,214,0.08)]">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[rgba(37,99,235,0.9)]">
+    <aside className="mb-10 rounded-2xl border border-[rgba(99,102,241,0.26)] bg-[linear-gradient(135deg,rgba(99,102,241,0.12),rgba(14,165,233,0.08)_45%,rgba(236,72,153,0.08))] px-5 py-4 shadow-[0_12px_24px_rgba(79,70,229,0.12)]">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[rgba(67,56,202,0.95)]">
         {title}
       </p>
       <div className="mt-2 text-[14px] leading-relaxed text-[rgba(30,41,59,0.9)]">

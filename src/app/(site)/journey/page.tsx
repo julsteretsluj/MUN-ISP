@@ -137,19 +137,19 @@ export const metadata = {
 export default function JourneyPage() {
   const themeAccents = [
     {
-      chip: "border-[rgba(148,163,184,0.35)] bg-white text-[rgba(51,65,85,0.82)]",
-      line: "from-[rgba(148,163,184,0.45)] to-transparent",
-      card: "hover:border-[rgba(99,102,241,0.3)] hover:shadow-[0_10px_26px_rgba(99,102,241,0.14)]",
+      chip: "border-indigo-200 bg-indigo-50 text-indigo-700",
+      line: "from-indigo-400/55 to-transparent",
+      card: "hover:border-indigo-300 hover:shadow-[0_12px_28px_rgba(99,102,241,0.22)]",
     },
     {
-      chip: "border-[rgba(148,163,184,0.35)] bg-white text-[rgba(51,65,85,0.82)]",
-      line: "from-[rgba(148,163,184,0.45)] to-transparent",
-      card: "hover:border-[rgba(99,102,241,0.3)] hover:shadow-[0_10px_26px_rgba(99,102,241,0.14)]",
+      chip: "border-sky-200 bg-sky-50 text-sky-700",
+      line: "from-sky-400/55 to-transparent",
+      card: "hover:border-sky-300 hover:shadow-[0_12px_28px_rgba(14,165,233,0.2)]",
     },
     {
-      chip: "border-[rgba(148,163,184,0.35)] bg-white text-[rgba(51,65,85,0.82)]",
-      line: "from-[rgba(148,163,184,0.45)] to-transparent",
-      card: "hover:border-[rgba(99,102,241,0.3)] hover:shadow-[0_10px_26px_rgba(99,102,241,0.14)]",
+      chip: "border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700",
+      line: "from-fuchsia-400/55 to-transparent",
+      card: "hover:border-fuchsia-300 hover:shadow-[0_12px_28px_rgba(217,70,239,0.2)]",
     },
   ] as const;
 
