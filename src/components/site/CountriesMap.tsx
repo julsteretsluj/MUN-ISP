@@ -1,4 +1,7 @@
+"use client";
+
 import { Star } from "lucide-react";
+import { CircleMarker, MapContainer, TileLayer, Tooltip } from "react-leaflet";
 import { topicsForConference } from "@/lib/conference-topics";
 
 type CountryPoint = {
@@ -8,8 +11,8 @@ type CountryPoint = {
   committee: string;
   allocation: string;
   awards?: string;
-  x: number;
-  y: number;
+  lat: number;
+  lng: number;
 };
 
 const COUNTRY_POINTS: CountryPoint[] = [
@@ -19,8 +22,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     conference: "THAIMUN XII",
     committee: "UNODC",
     allocation: "Nicaragua",
-    x: 24,
-    y: 54,
+    lat: 12.9,
+    lng: -85.0,
   },
   {
     id: "usa",
@@ -28,8 +31,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     conference: "NISMUN III",
     committee: "ECOSOC",
     allocation: "USA",
-    x: 18,
-    y: 40,
+    lat: 39.8,
+    lng: -98.6,
   },
   {
     id: "belgium",
@@ -37,8 +40,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     conference: "CISMUN IV",
     committee: "WHO",
     allocation: "Belgium",
-    x: 47,
-    y: 32,
+    lat: 50.8,
+    lng: 4.5,
   },
   {
     id: "new-zealand",
@@ -47,8 +50,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     committee: "WHO",
     allocation: "New Zealand",
     awards: "Best Position Paper",
-    x: 86,
-    y: 78,
+    lat: -41.2,
+    lng: 174.8,
   },
   {
     id: "israel",
@@ -56,8 +59,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     conference: "SISBMUN III",
     committee: "UNOOSA",
     allocation: "Israel",
-    x: 56,
-    y: 44,
+    lat: 31.0,
+    lng: 35.0,
   },
   {
     id: "germany",
@@ -66,8 +69,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     committee: "CSTD",
     allocation: "Germany",
     awards: "Best Position Paper",
-    x: 50,
-    y: 30,
+    lat: 51.2,
+    lng: 10.4,
   },
   {
     id: "afghanistan",
@@ -76,8 +79,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     committee: "WHO",
     allocation: "Afghanistan",
     awards: "Verbal Commendation",
-    x: 61,
-    y: 43,
+    lat: 33.9,
+    lng: 67.7,
   },
   {
     id: "france",
@@ -86,8 +89,8 @@ const COUNTRY_POINTS: CountryPoint[] = [
     committee: "INTERPOL",
     allocation: "France",
     awards: "Best Delegate + Best Position Paper",
-    x: 45,
-    y: 34,
+    lat: 46.2,
+    lng: 2.2,
   },
 ];
 
@@ -97,11 +100,6 @@ const NON_COUNTRY_ALLOCATIONS = [
     committee: "US Congress",
     allocation: "Senator Elizabeth Warren",
     awards: "Best Delegate",
-  },
-  {
-    conference: "MUN07 IV",
-    committee: "INTERPOL",
-    allocation: "Open Delegate allocation",
   },
   {
     conference: "THAIMUN XIII",
@@ -129,51 +127,63 @@ export function CountriesMap() {
 
       <div className="grid gap-5 xl:grid-cols-[1.2fr_1fr]">
         <div className="neu-raised relative overflow-hidden p-4 sm:p-5">
-          <div className="relative h-[360px] rounded-2xl bg-[linear-gradient(180deg,rgba(191,219,254,0.45),rgba(224,242,254,0.5))]">
-            <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(37,99,235,0.09)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.09)_1px,transparent_1px)] [background-size:26px_26px]" />
-            <div className="absolute left-[7%] top-[22%] h-24 w-40 rounded-full bg-[rgba(52,211,153,0.22)] blur-sm" />
-            <div className="absolute left-[42%] top-[18%] h-20 w-28 rounded-full bg-[rgba(168,85,247,0.2)] blur-sm" />
-            <div className="absolute left-[55%] top-[44%] h-24 w-32 rounded-full bg-[rgba(59,130,246,0.18)] blur-sm" />
-            <div className="absolute left-[18%] top-[52%] h-20 w-28 rounded-full bg-[rgba(250,204,21,0.2)] blur-sm" />
-            <div className="absolute left-[79%] top-[70%] h-16 w-20 rounded-full bg-[rgba(244,114,182,0.2)] blur-sm" />
+          <div className="relative h-[420px] overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.26)]">
+            <MapContainer
+              center={[20, 10]}
+              zoom={1.4}
+              minZoom={1.2}
+              maxZoom={5}
+              scrollWheelZoom={false}
+              style={{ height: "100%", width: "100%" }}
+              className="z-0"
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+                url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              />
+              {COUNTRY_POINTS.map((point) => (
+                <CircleMarker
+                  key={point.id}
+                  center={[point.lat, point.lng]}
+                  radius={point.awards ? 8 : 6}
+                  pathOptions={{
+                    color: point.awards ? "rgb(251,191,36)" : "rgb(79,70,229)",
+                    fillColor: point.awards ? "rgb(251,191,36)" : "rgb(79,70,229)",
+                    fillOpacity: 0.85,
+                    weight: 2,
+                  }}
+                >
+                  <Tooltip direction="top" offset={[0, -6]} opacity={1}>
+                    <div className="text-[12px] font-medium">
+                      {point.country} · {point.committee}
+                      {point.awards ? ` · ${point.awards}` : ""}
+                    </div>
+                  </Tooltip>
+                </CircleMarker>
+              ))}
+            </MapContainer>
 
-            {COUNTRY_POINTS.map((point) => (
-              <div
-                key={point.id}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ left: `${point.x}%`, top: `${point.y}%` }}
-              >
-                <div className="neu-chip flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold text-[var(--foreground)]">
-                  <span className="inline-block h-2.5 w-2.5 rounded-full bg-[var(--neu-accent)]" />
-                  {point.country}
-                  {point.awards ? (
-                    <Star className="h-3.5 w-3.5 fill-[rgb(251,191,36)] text-[rgb(251,191,36)]" />
+          </div>
+          <div className="neu-inset mt-3 rounded-xl p-3 text-[12px] text-[rgba(31,41,55,0.78)]">
+            <p className="mb-2 font-semibold text-[var(--foreground)]">
+              Non-country allocations
+            </p>
+            <ul className="space-y-1.5">
+              {NON_COUNTRY_ALLOCATIONS.map((item) => (
+                <li key={`${item.conference}-${item.allocation}`}>
+                  <span className="font-semibold text-[var(--foreground)]">
+                    {item.committee}
+                  </span>{" "}
+                  · {item.allocation}
+                  {item.awards ? (
+                    <span className="inline-flex items-center gap-1 pl-1 text-[rgb(180,83,9)]">
+                      <Star className="h-3 w-3 fill-[rgb(251,191,36)] text-[rgb(251,191,36)]" />
+                      {item.awards}
+                    </span>
                   ) : null}
-                </div>
-              </div>
-            ))}
-
-            <div className="neu-inset absolute bottom-3 right-3 max-w-[280px] rounded-xl p-3 text-[12px] text-[rgba(31,41,55,0.78)]">
-              <p className="mb-2 font-semibold text-[var(--foreground)]">
-                Non-country allocations
-              </p>
-              <ul className="space-y-1.5">
-                {NON_COUNTRY_ALLOCATIONS.map((item) => (
-                  <li key={`${item.conference}-${item.allocation}`}>
-                    <span className="font-semibold text-[var(--foreground)]">
-                      {item.committee}
-                    </span>{" "}
-                    · {item.allocation}
-                    {item.awards ? (
-                      <span className="inline-flex items-center gap-1 pl-1 text-[rgb(180,83,9)]">
-                        <Star className="h-3 w-3 fill-[rgb(251,191,36)] text-[rgb(251,191,36)]" />
-                        {item.awards}
-                      </span>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

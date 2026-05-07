@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Leaflet tile rendering fix with Tailwind preflight. */
+.leaflet-container img,
+.leaflet-container svg {
+  max-width: none !important;
+}
 
 /* Duolingo-inspired light UI with simple transitions */
 :root {
