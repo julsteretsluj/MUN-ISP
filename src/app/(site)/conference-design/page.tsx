@@ -1,3 +1,4 @@
+import { LayoutDashboard } from "lucide-react";
 import { PageIntro } from "@/components/site/Prose";
 
 export const metadata = {
@@ -7,7 +8,12 @@ export const metadata = {
 export default function ConferenceDesignPage() {
   return (
     <>
-      <PageIntro eyebrow="Page 6 · Apply learning" title="My conference design">
+      <PageIntro
+        eyebrow="Page 6 · Apply learning"
+        emoji="🎪"
+        icon={<LayoutDashboard className="h-7 w-7" strokeWidth={1.75} />}
+        title="My conference design"
+      >
         <p>
           This page uses my actual planning brief for{" "}
           <strong className="text-[rgba(15,23,42,0.92)]">SEAMUN I</strong>, including strategy,
@@ -19,7 +25,8 @@ export default function ConferenceDesignPage() {
 
       <div className="grid gap-5 lg:grid-cols-[280px_1fr]">
         <aside className="neu-inset p-3">
-          <p className="px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+          <p className="flex items-center gap-2 px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+            <span aria-hidden>📁</span>
             Folders
           </p>
           <div className="space-y-1">

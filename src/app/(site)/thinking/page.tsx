@@ -1,3 +1,4 @@
+import { Brain } from "lucide-react";
 import { Callout, PageIntro, PullQuote, Section } from "@/components/site/Prose";
 
 export const metadata = {
@@ -9,6 +10,8 @@ export default function ThinkingPage() {
     <>
       <PageIntro
         eyebrow="Page 3 · Explain your thinking"
+        emoji="💡"
+        icon={<Brain className="h-7 w-7" strokeWidth={1.75} />}
         title="How I think like a delegate"
       >
         <p>
@@ -19,7 +22,7 @@ export default function ThinkingPage() {
         </p>
       </PageIntro>
 
-      <Section title="How I research a country">
+      <Section emoji="🔎" title="How I research a country">
         <ol className="list-decimal space-y-4 pl-5 marker:text-[var(--neu-accent)]">
           <li>
             <strong className="text-white/88">Start with constraints, not adjectives.</strong>{" "}
@@ -38,14 +41,14 @@ export default function ThinkingPage() {
             where optimistic PP language dies.
           </li>
         </ol>
-        <Callout title="Why this strategy works">
+        <Callout emoji="✅" title="Why this strategy works">
           Committees reward delegates who can connect national interest to{" "}
           <em>draftable</em> mechanisms. Research that stops at vibe-check adjectives
           collapses the moment someone asks, “What funding clause supports that?”
         </Callout>
       </Section>
 
-      <Section title="How I build arguments">
+      <Section emoji="🧱" title="How I build arguments">
         <ul className="space-y-3">
           <li className="rounded-xl border border-white/[0.06] bg-black/25 px-4 py-3">
             <strong className="text-white/88">Claim → Mechanism → Evidence → Failure mode.</strong>{" "}
@@ -60,7 +63,7 @@ export default function ThinkingPage() {
         </ul>
       </Section>
 
-      <Section title="How I speak & negotiate">
+      <Section emoji="🎤" title="How I speak & negotiate">
         <p>
           Speeches open doors; caucus builds text. In moderated debate I aim for{" "}
           <strong className="text-white/88">one memorable mechanism + one cooperative offer</strong>
@@ -73,7 +76,7 @@ export default function ThinkingPage() {
         </PullQuote>
       </Section>
 
-      <Callout title="Level 6 · Real conference examples">
+      <Callout emoji="🏛️" title="Level 6 · Real conference examples">
         <p className="mb-3">
           At a WHO-style committee, a speech about “solidarity” didn’t move the bloc;
           what moved it was a{" "}
@@ -89,7 +92,7 @@ export default function ThinkingPage() {
         </p>
       </Callout>
 
-      <Section title="Why I change tactics by situation">
+      <Section emoji="🔀" title="Why I change tactics by situation">
         <p>
           Crisis arcs reward speed and narrative; specialized agencies reward precision
           and monitoring language. The thinking doesn’t change — only the tempo and the

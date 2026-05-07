@@ -1,4 +1,12 @@
-import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, Star } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  CalendarDays,
+  Sparkles,
+  Star,
+} from "lucide-react";
 import { topicsForConference } from "@/lib/conference-topics";
 
 type AwardCode = "BD" | "BPP" | "VC" | "HM";
@@ -116,8 +124,16 @@ export function ConferenceTimeline() {
 
   return (
     <section className="mb-12">
-      <h2 className="mb-3 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
-        Conference timeline
+      <h2 className="mb-3 flex flex-wrap items-center gap-3 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+        <span className="neu-chip grid h-11 w-11 shrink-0 place-items-center rounded-2xl">
+          <Sparkles className="h-5 w-5 text-[var(--neu-accent)]" aria-hidden />
+        </span>
+        <span>
+          <span className="mr-2" aria-hidden>
+            📅
+          </span>
+          Conference timeline
+        </span>
       </h2>
       <p className="mb-5 max-w-3xl text-[14px] leading-relaxed text-[rgba(31,41,55,0.68)]">
         A visual path of all conferences attended, inspired by your hand-drawn flow, now
@@ -150,7 +166,8 @@ export function ConferenceTimeline() {
             return (
               <article key={`mobile-${item.conference}`} className="neu-inset rounded-2xl p-4">
                 <div className="flex items-start justify-between gap-2">
-                  <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                    <Building2 className="h-3.5 w-3.5 shrink-0 opacity-90" aria-hidden />
                     {item.conference}
                   </p>
                   <span className="rounded-full bg-[rgba(59,130,246,0.14)] px-2 py-0.5 text-[10px] font-semibold text-[rgb(29,78,216)]">
@@ -208,7 +225,8 @@ export function ConferenceTimeline() {
                   >
                     <article className="neu-inset h-full rounded-2xl p-4">
                       <div className="flex items-start justify-between gap-2">
-                        <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                          <Building2 className="h-3.5 w-3.5 shrink-0 opacity-90" aria-hidden />
                           {item.conference}
                         </p>
                         <span className="rounded-full bg-[rgba(59,130,246,0.14)] px-2 py-0.5 text-[10px] font-semibold text-[rgb(29,78,216)]">

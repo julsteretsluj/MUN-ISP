@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { certificateGalleryItems } from "@/lib/mun-resources";
 
@@ -22,8 +22,14 @@ export function CertificateWall() {
     <div id="certificates" className="scroll-mt-28 mt-12">
       <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-xl font-semibold tracking-tight text-[var(--foreground)]">
-            Certificates & evidence
+          <h2 className="flex flex-wrap items-center gap-2 text-xl font-semibold tracking-tight text-[var(--foreground)]">
+            <Award className="h-6 w-6 shrink-0 text-[var(--neu-accent)]" aria-hidden />
+            <span>
+              <span className="mr-1.5" aria-hidden>
+                🎖️
+              </span>
+              Certificates & evidence
+            </span>
           </h2>
           <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-[rgba(100,116,139,0.55)]">
             Ten official certificates from six conferences — participation and awards.

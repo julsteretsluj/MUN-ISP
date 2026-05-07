@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Star } from "lucide-react";
+import { Flag, Globe2, Star } from "lucide-react";
 import { topicsForConference } from "@/lib/conference-topics";
 
 type CountryPoint = {
@@ -130,8 +130,16 @@ const LeafletConferenceMap = dynamic(
 export function CountriesMap() {
   return (
     <section className="mb-12">
-      <h2 className="mb-3 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
-        Countries represented map
+      <h2 className="mb-3 flex flex-wrap items-center gap-3 text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+        <span className="neu-chip grid h-11 w-11 shrink-0 place-items-center rounded-2xl">
+          <Globe2 className="h-5 w-5 text-[var(--neu-accent)]" aria-hidden />
+        </span>
+        <span>
+          <span className="mr-2" aria-hidden>
+            🗺️
+          </span>
+          Countries represented map
+        </span>
       </h2>
       <p className="mb-5 max-w-3xl text-[14px] leading-relaxed text-[rgba(31,41,55,0.68)]">
         A digital snapshot of country allocations across conferences. Star markers indicate
@@ -169,9 +177,14 @@ export function CountriesMap() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
           {COUNTRY_POINTS.map((point) => (
             <article key={`card-${point.id}`} className="neu-inset rounded-2xl p-4">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
-                {point.conference}
-              </p>
+              <div className="flex items-start justify-between gap-2">
+                <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                  {point.conference}
+                </p>
+                <span className="neu-chip grid h-9 w-9 shrink-0 place-items-center rounded-xl text-[var(--neu-accent)] [&_svg]:h-4 [&_svg]:w-4">
+                  <Flag aria-hidden />
+                </span>
+              </div>
               <h3 className="mt-1 text-[17px] font-semibold text-[var(--foreground)]">
                 {point.country}
               </h3>

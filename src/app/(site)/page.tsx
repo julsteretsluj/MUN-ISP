@@ -1,12 +1,17 @@
 import Link from "next/link";
-import { ArrowRight, Compass } from "lucide-react";
+import { ArrowRight, Compass, Globe2, Trophy, Users } from "lucide-react";
 import { CertificateWall } from "@/components/site/CertificateWall";
 import { Callout, PageIntro, PullQuote, Section } from "@/components/site/Prose";
 
 export default function HomePage() {
   return (
     <>
-      <PageIntro eyebrow="Page 1 · Home" title="Your MUN story at a glance">
+      <PageIntro
+        eyebrow="Page 1 · Home"
+        emoji="🧭"
+        icon={<Compass className="h-7 w-7" strokeWidth={1.75} />}
+        title="Your MUN story at a glance"
+      >
         <p>
           This site is a <strong className="text-[rgba(15,23,42,0.92)]">learning portfolio</strong>{" "}
           and <strong className="text-[rgba(15,23,42,0.92)]">open resource</strong>: it explains how
@@ -22,7 +27,8 @@ export default function HomePage() {
               <Compass className="h-5 w-5 text-[var(--neu-accent)]" aria-hidden />
             </span>
             <div>
-              <p className="text-[13px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+              <p className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-wide text-[var(--neu-accent)]">
+                <span aria-hidden>✨</span>
                 Start here
               </p>
               <p className="mt-1 max-w-xl text-[14px] leading-relaxed text-[rgba(51,65,85,0.72)]">
@@ -35,16 +41,18 @@ export default function HomePage() {
         </div>
         <ol className="mt-6 grid gap-3 sm:grid-cols-2">
           {[
-            { n: 1, href: "/", label: "Home — orientation", here: true },
+            { n: 1, href: "/", label: "Home — orientation", emoji: "🏠", here: true },
             {
               n: 2,
               href: "/experience-understanding",
               label: "Experience & understanding",
+              emoji: "🧠",
             },
             {
               n: 3,
               href: "/leadership-event-planning",
               label: "Leadership / event planning",
+              emoji: "🚀",
             },
           ].map((step) => (
             <li key={step.href}>
@@ -52,6 +60,9 @@ export default function HomePage() {
                 <span className="neu-inset flex items-center gap-3 rounded-xl px-4 py-3 text-[14px] text-[rgba(15,23,42,0.88)]">
                   <span className="font-mono text-[12px] text-[rgba(100,116,139,0.4)]">
                     {step.n}.
+                  </span>
+                  <span className="text-[16px] leading-none" aria-hidden>
+                    {step.emoji}
                   </span>
                   {step.label}
                 </span>
@@ -62,6 +73,9 @@ export default function HomePage() {
                 >
                   <span className="font-mono text-[12px] text-[rgba(100,116,139,0.4)]">
                     {step.n}.
+                  </span>
+                  <span className="text-[16px] leading-none" aria-hidden>
+                    {step.emoji}
                   </span>
                   {step.label}
                   <ArrowRight className="ml-auto h-4 w-4 text-[rgba(100,116,139,0.35)]" />
@@ -90,7 +104,9 @@ export default function HomePage() {
 
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
         <div className="neu-raised p-6">
-          <p className="text-[12px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+          <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+            <Globe2 className="h-3.5 w-3.5 text-[var(--neu-accent)]" aria-hidden />
+            <span aria-hidden>🌐</span>
             Conferences represented
           </p>
           <p className="mt-2 text-4xl font-semibold tabular-nums text-[var(--foreground)]">11</p>
@@ -104,7 +120,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="neu-raised p-6">
-          <p className="text-[12px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+          <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+            <Trophy className="h-3.5 w-3.5 text-[var(--neu-accent)]" aria-hidden />
+            <span aria-hidden>🏆</span>
             Competitive awards
           </p>
           <p className="mt-2 text-4xl font-semibold tabular-nums text-[var(--foreground)]">6</p>
@@ -114,7 +132,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="neu-raised p-6">
-          <p className="text-[12px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+          <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+            <Users className="h-3.5 w-3.5 text-[var(--neu-accent)]" aria-hidden />
+            <span aria-hidden>🎭</span>
             Roles & committees
           </p>
           <ul className="mt-3 space-y-2 text-[14px] text-[rgba(51,65,85,0.75)]">
@@ -135,7 +155,7 @@ export default function HomePage() {
 
       <CertificateWall />
 
-      <Section title="My MUN journey in one breath">
+      <Section emoji="💭" title="My MUN journey in one breath">
         <p>
           I started MUN wanting polished speeches. I stayed because it forced me to
           read treaties like a practitioner, not a spectator — connecting domestic
@@ -149,7 +169,7 @@ export default function HomePage() {
         </p>
       </Section>
 
-      <Callout title="Level 6 · How MUN changed my thinking">
+      <Callout emoji="🎓" title="Level 6 · How MUN changed my thinking">
         <p>
           MUN didn’t just teach me “both sides.” It trained me to ask what institutions
           can realistically deliver under time pressure, contested facts, and unequal
@@ -160,7 +180,7 @@ export default function HomePage() {
         </p>
       </Callout>
 
-      <Section title="Who this site is for">
+      <Section emoji="👋" title="Who this site is for">
         <ul className="list-disc space-y-2 pl-5 marker:text-[var(--neu-accent)]">
           <li>
             <strong className="text-[rgba(15,23,42,0.88)]">New delegates</strong> who want a

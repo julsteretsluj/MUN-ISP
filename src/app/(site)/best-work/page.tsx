@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FileText, Pin, Trophy } from "lucide-react";
 import {
   Callout,
   LastEditedRow,
@@ -66,7 +67,12 @@ export default function BestWorkPage() {
 
   return (
     <>
-      <PageIntro eyebrow="Page 4 · Evidence of growth" title="My best work">
+      <PageIntro
+        eyebrow="Page 4 · Evidence of growth"
+        emoji="⭐"
+        icon={<Trophy className="h-7 w-7" strokeWidth={1.75} />}
+        title="My best work"
+      >
         <p>
           Draft reflections below are templates you can swap for PDFs — meanwhile,{" "}
           <strong className="text-[rgba(15,23,42,0.88)]">official scans</strong> for recognised position
@@ -96,15 +102,19 @@ export default function BestWorkPage() {
           .
         </p>
       </PageIntro>
-      <PinnedMeta>Pinned note · Artifacts with reflection + revision logic</PinnedMeta>
+      <PinnedMeta icon={<Pin className="h-3.5 w-3.5" strokeWidth={2} />}>
+        Pinned note · Artifacts with reflection + revision logic
+      </PinnedMeta>
 
       <section className="mb-14 rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7">
         <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="mb-3 inline-flex items-center rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-indigo-700">
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-indigo-700">
+              <span aria-hidden>📚</span>
               Evidence Stack
             </div>
-            <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+            <h2 className="flex flex-wrap items-center gap-2 text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+              <span aria-hidden>📄</span>
               Draft resolutions — submitted PDFs
             </h2>
             <p className="mt-3 text-[14px] leading-relaxed text-[rgba(71,85,105,0.68)]">
@@ -119,7 +129,9 @@ export default function BestWorkPage() {
           {resolutions.map((r) => (
             <li key={r.id}>
               <div className="flex h-full flex-col rounded-2xl border border-[rgba(148,163,184,0.2)] bg-white p-5 transition hover:border-indigo-300 hover:shadow-[0_12px_28px_rgba(99,102,241,0.22)]">
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+                <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.45)]">
+                  <FileText className="h-3.5 w-3.5 text-[var(--neu-accent)]" aria-hidden />
+                  <span aria-hidden>📎</span>
                   PDF · Resolution 1.2
                 </p>
                 <p className="mt-2 flex-1 text-[15px] font-medium leading-snug text-[rgba(15,23,42,0.9)]">
@@ -151,10 +163,12 @@ export default function BestWorkPage() {
       <section className="mb-14 rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-5 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-7">
         <div className="grid gap-6 lg:grid-cols-[240px_1fr] lg:gap-8">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="mb-3 inline-flex items-center rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-fuchsia-700">
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-fuchsia-700">
+              <span aria-hidden>🏆</span>
               Awards Gallery
             </div>
-            <h2 className="text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+            <h2 className="flex flex-wrap items-center gap-2 text-xl font-semibold tracking-tight text-[rgba(15,23,42,0.95)] sm:text-2xl">
+              <span aria-hidden>🎖️</span>
               Position paper awards — scanned certificates
             </h2>
             <p className="mt-3 text-[14px] leading-relaxed text-[rgba(71,85,105,0.68)]">
@@ -191,7 +205,7 @@ export default function BestWorkPage() {
         </div>
       </section>
 
-      <Callout title="Level 6 · Improvement over time">
+      <Callout emoji="📈" title="Level 6 · Improvement over time">
         <LastEditedRow>Apr 2026 · reflection language tightened</LastEditedRow>
         <p>
           My early papers sounded confident but relied on thin sources. Over time, the
@@ -206,7 +220,8 @@ export default function BestWorkPage() {
         {PIECES.map((p, i) => (
           <article key={p.title} className="overflow-hidden rounded-3xl border border-[rgba(148,163,184,0.22)] bg-white/85 p-6 shadow-[0_12px_34px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-8">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="neu-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.55)]">
+              <span className="neu-chip inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-[rgba(100,116,139,0.55)]">
+                <span aria-hidden>{p.type === "Position paper" ? "📝" : "📜"}</span>
                 {p.type}
               </span>
               <span className="rounded-full bg-[rgba(15,23,42,0.06)] px-2 py-0.5 text-[10px] font-semibold text-[rgba(51,65,85,0.8)]">
@@ -243,7 +258,7 @@ export default function BestWorkPage() {
         ))}
       </div>
 
-      <Section title="How evidence strengthened arguments">
+      <Section emoji="🧪" title="How evidence strengthened arguments">
         <p>
           The strongest clauses I contributed weren’t emotionally loud — they were{" "}
           <strong className="text-[rgba(15,23,42,0.88)]">specific enough to coordinate behavior</strong>

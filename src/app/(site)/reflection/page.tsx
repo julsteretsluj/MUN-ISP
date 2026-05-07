@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookMarked } from "lucide-react";
 import { Callout, PageIntro, PullQuote, Section } from "@/components/site/Prose";
 
 export const metadata = {
@@ -8,7 +9,12 @@ export const metadata = {
 export default function ReflectionPage() {
   return (
     <>
-      <PageIntro eyebrow="Page 8 · Deep learning" title="Final reflection">
+      <PageIntro
+        eyebrow="Page 8 · Deep learning"
+        emoji="🪞"
+        icon={<BookMarked className="h-7 w-7" strokeWidth={1.75} />}
+        title="Final reflection"
+      >
         <p>
           This closing section connects the portfolio back to one question:{" "}
           <strong className="text-[rgba(15,23,42,0.9)]">
@@ -17,7 +23,7 @@ export default function ReflectionPage() {
         </p>
       </PageIntro>
 
-      <Section title="What I learned about global politics">
+      <Section emoji="🌐" title="What I learned about global politics">
         <p>
           Institutions move slowly for reasons that aren’t always cynicism — capacity,
           sovereignty, and contested facts all constrain speed. MUN helped me recognize
@@ -31,7 +37,7 @@ export default function ReflectionPage() {
         </Callout>
       </Section>
 
-      <Section title="How my communication improved">
+      <Section emoji="💬" title="How my communication improved">
         <ul className="space-y-3 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
           <li>
             <strong className="text-[rgba(15,23,42,0.88)]">Listening became tactical:</strong> I track
@@ -45,7 +51,7 @@ export default function ReflectionPage() {
         </ul>
       </Section>
 
-      <Section title="What I learned about leadership">
+      <Section emoji="🤝" title="What I learned about leadership">
         <p>
           Leadership isn’t owning the microphone — it’s raising the floor: making norms,
           examples, and procedures easier for others to succeed under pressure. Student
@@ -55,7 +61,8 @@ export default function ReflectionPage() {
       </Section>
 
       <div className="neu-raised mb-10 overflow-hidden p-5 sm:p-6">
-        <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-violet-700">
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-violet-500/20 to-fuchsia-400/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-violet-700">
+          <span aria-hidden>💎</span>
           Core Principle
         </div>
         <PullQuote>
@@ -66,7 +73,7 @@ export default function ReflectionPage() {
       </div>
 
       <div className="neu-raised mb-10 p-5 sm:p-6">
-      <Callout title="Level 6 · Connect the whole project">
+      <Callout emoji="🧵" title="Level 6 · Connect the whole project">
         <p className="mb-3">
           <Link href="/journey" className="neu-link font-medium">
             Journey
@@ -100,7 +107,7 @@ export default function ReflectionPage() {
       </Callout>
       </div>
 
-      <Section title="Impact on my future">
+      <Section emoji="🔭" title="Impact on my future">
         <p>
           I’ll carry forward a bias toward mechanisms I can defend, questions that expose
           hidden trade-offs, and the discipline to make resources others can actually use —

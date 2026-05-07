@@ -9,7 +9,7 @@ export default function SiteLayout({
 }) {
   return (
     <div className="min-h-screen bg-[var(--neu-canvas)] px-3 py-3 sm:px-4">
-      <div className="neu-raised mx-auto flex min-h-[calc(100vh-1.5rem)] w-full max-w-[1400px] overflow-hidden rounded-[1.75rem]">
+      <div className="app-shell mx-auto flex min-h-[calc(100vh-1.5rem)] w-full max-w-[1400px] overflow-hidden rounded-[1.75rem]">
         <NotesSidebar />
         <div className="min-w-0 flex-1">
           <SiteNav />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookOpen, Pin } from "lucide-react";
 import {
   Callout,
   LastEditedRow,
@@ -16,7 +17,12 @@ export const metadata = {
 export default function ResourcesPage() {
   return (
     <>
-      <PageIntro eyebrow="Page 7 · Help others succeed" title="Resources for delegates">
+      <PageIntro
+        eyebrow="Page 7 · Help others succeed"
+        emoji="📚"
+        icon={<BookOpen className="h-7 w-7" strokeWidth={1.75} />}
+        title="Resources for delegates"
+      >
         <p>
           These guides are written from practice — mistakes included — so they’re meant
           to be reused. All portfolio files are now integrated directly into this site,
@@ -24,12 +30,17 @@ export default function ResourcesPage() {
           from one place.
         </p>
       </PageIntro>
-      <PinnedMeta>Pinned note · Reusable prep systems for newer delegates</PinnedMeta>
+      <PinnedMeta icon={<Pin className="h-3.5 w-3.5" strokeWidth={2} />}>
+        Pinned note · Reusable prep systems for newer delegates
+      </PinnedMeta>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <NoteCard>
           <LastEditedRow>Apr 2026 · starter strategy pass</LastEditedRow>
-          <h2 className="text-lg font-semibold text-[var(--foreground)]">Position papers</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-[var(--foreground)]">
+            <span aria-hidden>📄</span>
+            Position papers
+          </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)] marker:text-[var(--neu-accent)]">
             <li>
               <strong className="text-[rgba(30,41,59,0.85)]">Beginners:</strong> Use the “constraint
@@ -48,7 +59,10 @@ export default function ResourcesPage() {
 
         <NoteCard>
           <LastEditedRow>Apr 2026 · caucus prompts improved</LastEditedRow>
-          <h2 className="text-lg font-semibold text-[var(--foreground)]">Debate & caucus</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-[var(--foreground)]">
+            <span aria-hidden>🎤</span>
+            Debate & caucus
+          </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)] marker:text-[rgba(196,160,255,0.75)]">
             <li>
               Replace monologue with <strong className="text-[rgba(30,41,59,0.85)]">three questions</strong>{" "}
@@ -64,7 +78,10 @@ export default function ResourcesPage() {
 
         <NoteCard>
           <LastEditedRow>Apr 2026 · sourcing checklist updated</LastEditedRow>
-          <h2 className="text-lg font-semibold text-[var(--foreground)]">Evidence habits</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-[var(--foreground)]">
+            <span aria-hidden>🔗</span>
+            Evidence habits
+          </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)] marker:text-[rgba(255,180,120,0.85)]">
             <li>
               Triangulate: official government / UN technical / one independent watchdog.
@@ -77,7 +94,10 @@ export default function ResourcesPage() {
 
         <NoteCard>
           <LastEditedRow>Apr 2026 · examples expanded</LastEditedRow>
-          <h2 className="text-lg font-semibold text-[var(--foreground)]">Examples</h2>
+          <h2 className="flex items-center gap-2 text-lg font-semibold text-[var(--foreground)]">
+            <span aria-hidden>✂️</span>
+            Examples
+          </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[rgba(71,85,105,0.7)]">
             Place anonymized excerpts in your final portfolio: one strong operative
             paragraph, one weaker excerpt with annotations on why it fails, and one revised
@@ -92,7 +112,7 @@ export default function ResourcesPage() {
         </NoteCard>
       </div>
 
-      <Callout title="Level 6 · Different audiences, same honesty">
+      <Callout emoji="🎯" title="Level 6 · Different audiences, same honesty">
         <p>
           Beginners need scaffolding and repetition; advanced delegates need constraint
           and coalition psychology. The advice differs — the ethic doesn’t: cite sources
@@ -101,110 +121,19 @@ export default function ResourcesPage() {
         </p>
       </Callout>
 
-      <Section title="Digital toolkit">
+      <Section emoji="🛠️" title="Digital toolkit">
         <LastEditedRow>Apr 2026 · prep PDFs consolidated</LastEditedRow>
         <p>
           This site includes a full prep catalog (including{" "}
           <strong className="text-[rgba(30,41,59,0.85)]">Certificates</strong> and{" "}
           <strong className="text-[rgba(30,41,59,0.85)]">Resolutions</strong> PDFs) and it
-          keeps evidence organised when nerves spike before session.
-        </p>
-        <p>
-          Added prep document:{" "}
-          <Link
-            href="/mun/cismun-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            CISMUN Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/hexamun-26-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            HEXAMUN_26 Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/mun07-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            MUN07 Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/newton-mun-i-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            Newton MUN I Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/regents-mun-i-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            Regents MUN I Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/sisbmun-iii-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            SISBMUN III Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/stamun-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            StaMUN Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/thaimun-xii-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            THAIMUN XII Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/thaimun-xiii-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            THAIMUN XIII Prep.pdf
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/mun/tsimun-i-prep.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neu-link font-medium"
-          >
-            TSIMUN I Prep.pdf
-          </Link>{" "}
-          .
+          keeps evidence organised when nerves spike before session. Prep PDFs appear in
+          the <strong className="text-[rgba(30,41,59,0.85)]">Prep documents</strong>{" "}
+          section of the file index below.
         </p>
       </Section>
 
-      <Section title="All portfolio files">
+      <Section emoji="📂" title="All portfolio files">
         <LastEditedRow>Apr 2026 · unified file index</LastEditedRow>
         {(["research", "position-papers", "resolutions", "certificates"] as const).map(
           (category) => {
@@ -218,9 +147,20 @@ export default function ResourcesPage() {
                   : category === "resolutions"
                     ? "Draft resolutions"
                     : "Certificates";
+            const catEmoji =
+              category === "research"
+                ? "📋"
+                : category === "position-papers"
+                  ? "📄"
+                  : category === "resolutions"
+                    ? "📜"
+                    : "🎖️";
             return (
               <div key={category} className="mb-7">
-                <h3 className="mb-2 text-base font-semibold text-[var(--foreground)]">{label}</h3>
+                <h3 className="mb-2 flex items-center gap-2 text-base font-semibold text-[var(--foreground)]">
+                  <span aria-hidden>{catEmoji}</span>
+                  {label}
+                </h3>
                 <ul className="grid gap-2 sm:grid-cols-2">
                   {items.map((item) => (
                     <li key={item.id}>
@@ -228,8 +168,11 @@ export default function ResourcesPage() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="neu-chip block rounded-xl px-3 py-2 text-[13px] text-[rgba(30,41,59,0.85)]"
+                        className="neu-chip flex items-center gap-2 rounded-xl px-3 py-2 text-[13px] text-[rgba(30,41,59,0.85)]"
                       >
+                        <span className="text-[15px] leading-none opacity-80" aria-hidden>
+                          {catEmoji}
+                        </span>
                         {item.label}
                       </Link>
                     </li>
