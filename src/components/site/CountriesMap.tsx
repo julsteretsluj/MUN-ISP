@@ -1,7 +1,7 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { Star } from "lucide-react";
-import { CircleMarker, MapContainer, TileLayer, Tooltip } from "react-leaflet";
 import { topicsForConference } from "@/lib/conference-topics";
 
 type CountryPoint = {
@@ -114,6 +114,19 @@ const NON_COUNTRY_ALLOCATIONS = [
   },
 ];
 
+const LeafletConferenceMap = dynamic(
+  () =>
+    import("./LeafletConferenceMap").then((mod) => mod.LeafletConferenceMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="grid h-full w-full place-items-center bg-[linear-gradient(180deg,rgba(239,246,255,0.9),rgba(224,231,255,0.7))] text-[13px] text-[rgba(71,85,105,0.8)]">
+        Loading map...
+      </div>
+    ),
+  }
+);
+
 export function CountriesMap() {
   return (
     <section className="mb-12">
@@ -128,41 +141,7 @@ export function CountriesMap() {
       <div className="grid gap-5 xl:grid-cols-[1.2fr_1fr]">
         <div className="neu-raised relative overflow-hidden p-4 sm:p-5">
           <div className="relative h-[420px] overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.26)]">
-            <MapContainer
-              center={[20, 10]}
-              zoom={1.4}
-              minZoom={1.2}
-              maxZoom={5}
-              scrollWheelZoom={false}
-              style={{ height: "100%", width: "100%" }}
-              className="z-0"
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
-                url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-              />
-              {COUNTRY_POINTS.map((point) => (
-                <CircleMarker
-                  key={point.id}
-                  center={[point.lat, point.lng]}
-                  radius={point.awards ? 8 : 6}
-                  pathOptions={{
-                    color: point.awards ? "rgb(251,191,36)" : "rgb(79,70,229)",
-                    fillColor: point.awards ? "rgb(251,191,36)" : "rgb(79,70,229)",
-                    fillOpacity: 0.85,
-                    weight: 2,
-                  }}
-                >
-                  <Tooltip direction="top" offset={[0, -6]} opacity={1}>
-                    <div className="text-[12px] font-medium">
-                      {point.country} · {point.committee}
-                      {point.awards ? ` · ${point.awards}` : ""}
-                    </div>
-                  </Tooltip>
-                </CircleMarker>
-              ))}
-            </MapContainer>
-
+            <LeafletConferenceMap points={COUNTRY_POINTS} />
           </div>
           <div className="neu-inset mt-3 rounded-xl p-3 text-[12px] text-[rgba(31,41,55,0.78)]">
             <p className="mb-2 font-semibold text-[var(--foreground)]">
