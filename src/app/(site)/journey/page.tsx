@@ -25,15 +25,6 @@ const THEMES = [
           "I pushed cooperation models that balanced intelligence-sharing with sovereignty safeguards, so implementation stayed realistic for lower-capacity states.",
       },
       {
-        conference: "HEXA Model United Nations — Bangkok, 25 Apr 2026",
-        committee: "HCC (Historical Crisis Committee)",
-        country: "Pierre Mendès France",
-        issue:
-          "Crisis arcs requiring cabinet-level negotiation under shifting intelligence and alliance constraints",
-        argued:
-          "I prioritised verifiable de-escalation steps over rhetorical victories — historical committees punish vague bluster when chairs inject consequences.",
-      },
-      {
         conference:
           "MUN107 IV — St Andrews International School Sukhumvit 107 (7 Mar 2026)",
         committee: "INTERPOL",
@@ -52,6 +43,15 @@ const THEMES = [
         argued:
           "I focused on coalition-feasible statute framing, where procedural timing and amendment strategy mattered as much as ideological positioning.",
       },
+      {
+        conference: "HEXA Model United Nations — Bangkok, 25 Apr 2026",
+        committee: "HCC (Historical Crisis Committee)",
+        country: "Pierre Mendès France",
+        issue:
+          "Crisis arcs requiring cabinet-level negotiation under shifting intelligence and alliance constraints",
+        argued:
+          "I prioritised verifiable de-escalation steps over rhetorical victories — historical committees punish vague bluster when chairs inject consequences.",
+      },
     ],
   },
   {
@@ -59,6 +59,15 @@ const THEMES = [
     blurb:
       "WHO-style committees reward delegates who connect epidemiology to financing and equity — not slogans.",
     items: [
+      {
+        conference: "NISMUN III",
+        committee: "ECOSOC",
+        country: "USA",
+        issue:
+          "Development and social-policy outcomes under competing budget priorities",
+        argued:
+          "I argued for measurable social-impact frameworks so budget language could be defended with evidence rather than broad declarations.",
+      },
       {
         conference: "CISMUN IV",
         committee: "WHO",
@@ -85,15 +94,6 @@ const THEMES = [
         argued:
           "Best Position Paper came from anchoring claims in agency guidance and domestic capacity — then showing how verification protects trust.",
       },
-      {
-        conference: "NISMUN III",
-        committee: "ECOSOC",
-        country: "USA",
-        issue:
-          "Development and social-policy outcomes under competing budget priorities",
-        argued:
-          "I argued for measurable social-impact frameworks so budget language could be defended with evidence rather than broad declarations.",
-      },
     ],
   },
   {
@@ -110,14 +110,6 @@ const THEMES = [
           "I translated national progressive priorities into draftable statute-style provisions — balancing caucus politics with constitutional framing.",
       },
       {
-        conference: "TSIMUN I — 31 Jan 2026",
-        committee: "CSTD (Commission on Science and Technology for Development)",
-        country: "Germany",
-        issue: "Science & technology for development — institutions, access, and safeguards",
-        argued:
-          "Winning Best Position Paper required tying innovation pathways to monitoring and finance — not treating ‘tech transfer’ as a hollow headline.",
-      },
-      {
         conference: "SISBMUN III",
         committee: "UNOOSA",
         country: "Israel",
@@ -125,6 +117,14 @@ const THEMES = [
           "Space governance and responsible-state behavior in emerging orbital domains",
         argued:
           "I emphasized verification and liability clarity so technical norms could move from principle to compliance practice.",
+      },
+      {
+        conference: "TSIMUN I — 31 Jan 2026",
+        committee: "CSTD (Commission on Science and Technology for Development)",
+        country: "Germany",
+        issue: "Science & technology for development — institutions, access, and safeguards",
+        argued:
+          "Winning Best Position Paper required tying innovation pathways to monitoring and finance — not treating ‘tech transfer’ as a hollow headline.",
       },
     ],
   },

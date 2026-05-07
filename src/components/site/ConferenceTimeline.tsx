@@ -71,6 +71,7 @@ const TIMELINE: TimelineItem[] = [
     committee: "WHO",
     allocation: "Afghanistan",
     date: "14-15 February 2026",
+    awards: ["VC"],
   },
   {
     order: 9,

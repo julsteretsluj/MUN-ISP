@@ -14,6 +14,15 @@ type CountryPoint = {
 
 const COUNTRY_POINTS: CountryPoint[] = [
   {
+    id: "nicaragua",
+    country: "Nicaragua",
+    conference: "THAIMUN XII",
+    committee: "UNODC",
+    allocation: "Nicaragua",
+    x: 24,
+    y: 54,
+  },
+  {
     id: "usa",
     country: "USA",
     conference: "NISMUN III",
@@ -23,16 +32,6 @@ const COUNTRY_POINTS: CountryPoint[] = [
     y: 40,
   },
   {
-    id: "france",
-    country: "France",
-    conference: "MUN07 IV",
-    committee: "INTERPOL",
-    allocation: "France",
-    awards: "Best Delegate + Best Position Paper",
-    x: 45,
-    y: 34,
-  },
-  {
     id: "belgium",
     country: "Belgium",
     conference: "CISMUN IV",
@@ -40,6 +39,25 @@ const COUNTRY_POINTS: CountryPoint[] = [
     allocation: "Belgium",
     x: 47,
     y: 32,
+  },
+  {
+    id: "new-zealand",
+    country: "New Zealand",
+    conference: "STAMUN XI",
+    committee: "WHO",
+    allocation: "New Zealand",
+    awards: "Best Position Paper",
+    x: 86,
+    y: 78,
+  },
+  {
+    id: "israel",
+    country: "Israel",
+    conference: "SISBMUN III",
+    committee: "UNOOSA",
+    allocation: "Israel",
+    x: 56,
+    y: 44,
   },
   {
     id: "germany",
@@ -57,51 +75,23 @@ const COUNTRY_POINTS: CountryPoint[] = [
     conference: "NewtonMUN I",
     committee: "WHO",
     allocation: "Afghanistan",
+    awards: "Verbal Commendation",
     x: 61,
     y: 43,
   },
   {
-    id: "israel",
-    country: "Israel",
-    conference: "SISBMUN III",
-    committee: "UNOOSA",
-    allocation: "Israel",
-    x: 56,
-    y: 44,
-  },
-  {
-    id: "nicaragua",
-    country: "Nicaragua",
-    conference: "THAIMUN XII",
-    committee: "UNODC",
-    allocation: "Nicaragua",
-    x: 24,
-    y: 54,
-  },
-  {
-    id: "new-zealand",
-    country: "New Zealand",
-    conference: "STAMUN XI",
-    committee: "WHO",
-    allocation: "New Zealand",
-    awards: "Best Position Paper",
-    x: 86,
-    y: 78,
+    id: "france",
+    country: "France",
+    conference: "MUN07 IV",
+    committee: "INTERPOL",
+    allocation: "France",
+    awards: "Best Delegate + Best Position Paper",
+    x: 45,
+    y: 34,
   },
 ];
 
 const NON_COUNTRY_ALLOCATIONS = [
-  {
-    conference: "HEXAMUN '26",
-    committee: "HCC",
-    allocation: "Pierre Mendes France",
-    awards: "Honorable Mention",
-  },
-  {
-    conference: "THAIMUN XIII",
-    committee: "USCC",
-    allocation: "Ted Cruz (TX, Republican)",
-  },
   {
     conference: "Regents MUN I",
     committee: "US Congress",
@@ -112,6 +102,17 @@ const NON_COUNTRY_ALLOCATIONS = [
     conference: "MUN07 IV",
     committee: "INTERPOL",
     allocation: "Open Delegate allocation",
+  },
+  {
+    conference: "THAIMUN XIII",
+    committee: "USCC",
+    allocation: "Ted Cruz (TX, Republican)",
+  },
+  {
+    conference: "HEXAMUN '26",
+    committee: "HCC",
+    allocation: "Pierre Mendes France",
+    awards: "Honorable Mention",
   },
 ];
 
