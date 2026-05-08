@@ -96,6 +96,27 @@ export const FINDER_RESOURCES: FinderResource[] = [
     url: "/mun/tsimun-i-prep.pdf",
   },
   {
+    id: "research-mun-reform-strategy-ios",
+    category: "research",
+    label: "MUN Reform Strategy (iOS slide deck)",
+    kind: "pdf",
+    url: "/mun/research/mun-reform-strategy-ios.pptx",
+  },
+  {
+    id: "research-seamun-chair-expectations",
+    category: "research",
+    label: "SEAMUN I 2027 — Chair Expectations",
+    kind: "pdf",
+    url: "/mun/research/seamun-i-2027-chair-expectations.pdf",
+  },
+  {
+    id: "research-seamun-award-criteria",
+    category: "research",
+    label: "SEAMUN I 2027 — Awards Criteria",
+    kind: "pdf",
+    url: "/mun/research/seamun-i-2027-award-criteria.pdf",
+  },
+  {
     id: "pp-afghanistan-who",
     category: "position-papers",
     label: "WHO — Afghanistan (position paper)",
