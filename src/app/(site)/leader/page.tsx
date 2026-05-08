@@ -72,24 +72,6 @@ export default function LeaderPage() {
         </ul>
       </Section>
 
-      <Callout emoji="🌉" title="Level 6 · Experience → Insight → Solution">
-        <p className="mb-4">
-          <strong className="text-white/95">Experience:</strong> I watched confident
-          speakers lose the room when they couldn’t answer implementation questions.
-        </p>
-        <p className="mb-4">
-          <strong className="text-white/95">Insight:</strong> Delegates don’t only need
-          motivation — they need <em>templates</em> that make good prep legible and
-          repeatable under time pressure.
-        </p>
-        <p>
-          <strong className="text-white/95">Solution:</strong> Short, modular resources
-          (clause patterns, caucus prompts, verification checklists) and peer coaching
-          that practices <em>questions</em>, not speeches. That’s the bridge into
-          conference design and the resources section of this site.
-        </p>
-      </Callout>
-
       <Section emoji="🧩" title="How experiences shaped my ideas">
         <p>
           Every time I lost a clause fight because my coalition couldn’t coordinate

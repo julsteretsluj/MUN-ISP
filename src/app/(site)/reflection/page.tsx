@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { BookMarked } from "lucide-react";
 import { Callout, PageIntro, PullQuote, Section } from "@/components/site/Prose";
 
@@ -70,41 +69,6 @@ export default function ReflectionPage() {
           build reusable tools, and treat debate as preparation for coordination — not
           performance alone.
         </PullQuote>
-      </div>
-
-      <div className="neu-raised mb-10 p-5 sm:p-6">
-      <Callout emoji="🧵" title="Level 6 · Connect the whole project">
-        <p className="mb-3">
-          <Link href="/journey" className="neu-link font-medium">
-            Journey
-          </Link>{" "}
-          taught me comparison;{" "}
-          <Link href="/thinking" className="neu-link font-medium">
-            Thinking
-          </Link>{" "}
-          turned habits explicit;{" "}
-          <Link href="/best-work" className="neu-link font-medium">
-            Best work
-          </Link>{" "}
-          proved growth with evidence;{" "}
-          <Link href="/leader" className="neu-link font-medium">
-            Leader
-          </Link>{" "}
-          named systemic gaps;{" "}
-          <Link href="/conference-design" className="neu-link font-medium">
-            Conference design
-          </Link>{" "}
-          proposed a practical response;{" "}
-          <Link href="/resources" className="neu-link font-medium">
-            Resources
-          </Link>{" "}
-          tries to pay the learning forward.
-        </p>
-        <p>
-          Together, those pages argue that MUN can be more than a weekend simulation — it
-          can be training for ethical negotiation under imperfect information.
-        </p>
-      </Callout>
       </div>
 
       <Section emoji="🔭" title="Impact on my future">

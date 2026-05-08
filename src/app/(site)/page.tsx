@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Compass, Globe2, Trophy, Users } from "lucide-react";
 import { CertificateWall } from "@/components/site/CertificateWall";
-import { Callout, PageIntro, PullQuote, Section } from "@/components/site/Prose";
+import { PageIntro, PullQuote, Section } from "@/components/site/Prose";
 
 export default function HomePage() {
   return (
@@ -168,17 +168,6 @@ export default function HomePage() {
           gets recognized, what gets voted on, and what evidence counts as “in order.”
         </p>
       </Section>
-
-      <Callout emoji="🎓" title="Level 6 · How MUN changed my thinking">
-        <p>
-          MUN didn’t just teach me “both sides.” It trained me to ask what institutions
-          can realistically deliver under time pressure, contested facts, and unequal
-          capacity. I stopped treating global issues as purely moral questions and
-          started treating them as{" "}
-          <strong className="text-[rgba(15,23,42,0.95)]">coordination problems</strong> — where
-          incentives, enforcement, and legitimacy matter as much as intent.
-        </p>
-      </Callout>
 
       <Section emoji="👋" title="Who this site is for">
         <ul className="list-disc space-y-2 pl-5 marker:text-[var(--neu-accent)]">

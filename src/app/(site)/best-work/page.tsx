@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FileText, Pin, Trophy } from "lucide-react";
 import {
-  Callout,
   LastEditedRow,
   PageIntro,
   PinnedMeta,
@@ -204,17 +203,6 @@ export default function BestWorkPage() {
           </ul>
         </div>
       </section>
-
-      <Callout emoji="📈" title="Level 6 · Improvement over time">
-        <LastEditedRow>Apr 2026 · reflection language tightened</LastEditedRow>
-        <p>
-          My early papers sounded confident but relied on thin sources. Over time, the
-          improvement wasn’t “more words” — it was{" "}
-          <strong className="text-[rgba(15,23,42,0.95)]">better mechanisms + harder tests for my own claims</strong>
-          . The evidence sections became shorter but heavier: fewer quotes, more
-          institution-grade references.
-        </p>
-      </Callout>
 
       <div className="grid gap-6 xl:grid-cols-2">
         {PIECES.map((p, i) => (

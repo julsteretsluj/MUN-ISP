@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { BookOpen, Pin } from "lucide-react";
 import {
-  Callout,
   LastEditedRow,
   NoteCard,
   PageIntro,
@@ -111,15 +110,6 @@ export default function ResourcesPage() {
           </Link>
         </NoteCard>
       </div>
-
-      <Callout emoji="🎯" title="Level 6 · Different audiences, same honesty">
-        <p>
-          Beginners need scaffolding and repetition; advanced delegates need constraint
-          and coalition psychology. The advice differs — the ethic doesn’t: cite sources
-          you’d stake your reputation on, and build arguments others can reuse without
-          copying your country’s circumstances blindly.
-        </p>
-      </Callout>
 
       <Section emoji="🛠️" title="Digital toolkit">
         <LastEditedRow>Apr 2026 · prep PDFs consolidated</LastEditedRow>

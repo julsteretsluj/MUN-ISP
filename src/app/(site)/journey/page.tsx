@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   Building2,
   GitCompare,
@@ -11,12 +10,10 @@ import {
   Route,
   ScrollText,
   Shield,
-  Sparkles,
   Target,
 } from "lucide-react";
 import { CountriesMap } from "@/components/site/CountriesMap";
 import {
-  Callout,
   LastEditedRow,
   PageIntro,
   PinnedMeta,
@@ -211,24 +208,6 @@ export default function JourneyPage() {
       <PinnedMeta icon={<Pin className="h-3.5 w-3.5" strokeWidth={2} />}>
         Pinned note · 11 conferences grouped by policy theme
       </PinnedMeta>
-
-      <Callout
-        emoji="✨"
-        icon={<Sparkles className="h-4 w-4" strokeWidth={1.75} />}
-        title="Level 6 · Comparison across conferences"
-      >
-        <LastEditedRow>Apr 2026 · conference reflections updated</LastEditedRow>
-        <p>
-          Early committees taught me confidence; later committees taught me constraint.
-          The shift wasn’t abandoning values — it was learning to embed them in clauses
-          that could survive cross-examination in unmoderated caucus. Evidence files for
-          each event are collected on the{" "}
-          <Link href="/#certificates" className="neu-link underline decoration-[var(--neu-accent)]/40">
-            Home page certificate gallery
-          </Link>
-          .
-        </p>
-      </Callout>
 
       <Section
         emoji="🧩"

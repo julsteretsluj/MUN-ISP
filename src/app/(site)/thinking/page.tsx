@@ -76,22 +76,6 @@ export default function ThinkingPage() {
         </PullQuote>
       </Section>
 
-      <Callout emoji="🏛️" title="Level 6 · Real conference examples">
-        <p className="mb-3">
-          At a WHO-style committee, a speech about “solidarity” didn’t move the bloc;
-          what moved it was a{" "}
-          <strong className="text-white/95">tiered financing schedule</strong> tied to
-          regional production milestones — evidence from a missed delivery season the
-          year prior.
-        </p>
-        <p>
-          In a security simulation, my most useful moment wasn’t rhetoric — it was a
-          two-step fallback: humanitarian access if monitors report X; sanctions
-          escalation only if Y. That created a corridor for negotiation without pretending
-          risk disappears.
-        </p>
-      </Callout>
-
       <Section emoji="🔀" title="Why I change tactics by situation">
         <p>
           Crisis arcs reward speed and narrative; specialized agencies reward precision
