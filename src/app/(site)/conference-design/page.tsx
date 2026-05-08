@@ -3,6 +3,8 @@ import { LayoutDashboard, ShieldCheck } from "lucide-react";
 import { CommitteeLunchOverlap } from "@/components/site/CommitteeLunchOverlap";
 import { PageIntro } from "@/components/site/Prose";
 
+export const dynamic = "force-dynamic";
+
 const REFORM_PHASES = [
   {
     phase: "Phase 1 · Institutional & legal governance",
@@ -478,9 +480,11 @@ function resolveScheduleView(group?: string): ScheduleViewId {
 export default async function ConferenceDesignPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ tab?: string; group?: string }>;
+  searchParams?:
+    | { tab?: string; group?: string }
+    | Promise<{ tab?: string; group?: string }>;
 }) {
-  const resolvedSearchParams = await searchParams;
+  const resolvedSearchParams = await Promise.resolve(searchParams);
   const activeTab = resolveTab(resolvedSearchParams?.tab);
   const activeScheduleView = resolveScheduleView(resolvedSearchParams?.group);
   const activeGroup = activeScheduleView === "overlap" ? "g1" : activeScheduleView;
